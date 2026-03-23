@@ -173,9 +173,6 @@ export default function Page() {
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
-      <div className="fixed right-4 top-4 z-[61] rounded-full border border-orange-500/30 bg-zinc-950/85 px-3 py-1 text-xs font-bold tracking-[0.25em] text-orange-300 backdrop-blur sm:right-6">
-        {scrollProgress}%
-      </div>
 
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-zinc-950/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
