@@ -1,14 +1,15 @@
 "use client";
 
+import CalculadoraPlataformas from "@/components/CalculadoraPlataformas";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Clock3, ShieldCheck, Truck, X, ArrowRight, CheckCircle2, BadgeCheck, BatteryCharging, Building2, ChevronUp, MessageCircleMore, Play, Instagram } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { Clock3, ShieldCheck, Truck, X, ArrowRight, CheckCircle2, BadgeCheck, BatteryCharging, Building2, ChevronUp, MessageCircleMore, Instagram } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const WHATSAPP_URL = "https://wa.me/5511999999999";
 const INSTAGRAM_URL = "https://www.instagram.com/terraar.brasil/";
-const FEATURED_VIDEO = "/videos/terraar-destaque.mp4";
+const INSTITUTIONAL_VIDEO_EMBED = "https://www.youtube.com/embed/a3NtvovVe5w?rel=0&modestbranding=1";
 
 const fleet = [
   {
@@ -115,11 +116,9 @@ const heroImages = [
 
 export default function Page() {
   const router = useRouter();
-  const videoRef = useRef<HTMLVideoElement | null>(null);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState<number | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeHeroImage, setActiveHeroImage] = useState(0);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     if (activeGalleryIndex === null) return;
@@ -172,7 +171,7 @@ export default function Page() {
     <main className="min-h-screen bg-zinc-950 text-white">
       <div className="fixed inset-x-0 top-0 z-[60] h-1 bg-white/5">
         <div
-          className="h-full bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 transition-[width] duration-150"
+          className="h-full bg-[linear-gradient(90deg,#f99c2c,#ffb347,#f99c2c)] transition-[width] duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -180,7 +179,7 @@ export default function Page() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-zinc-950/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
           <Link href="#top" className="flex items-center gap-3">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full border border-orange-500/40 bg-zinc-900 shadow-[0_0_30px_rgba(249,115,22,0.25)]">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full border border-[rgba(249,156,44,0.4)] bg-zinc-900 shadow-[0_0_30px_rgba(249,156,44,0.25)]">
               <Image
                 src="https://instagram.fcgh51-1.fna.fbcdn.net/v/t51.82787-19/561175354_17872139979440356_8157841243592877380_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fcgh51-1.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2gEjpSGKTQSHSTsL11zxWcOdXR2a7SP0qjHP-oN4WhccbLMmdl6UdkWlYi0SDnxiIuwrnbUTkepBvHeu8v-A2Yt7&_nc_ohc=CHmoXZKy8CkQ7kNvwFUJMvg&_nc_gid=yUywZmOhPOPpy4ou785bzw&edm=APoiHPcBAAAA&ccb=7-5&oh=00_AfwyPsX_Bhcmnxn5wabyY6Bp5KVSqQcR4TOls_0hAQV7hw&oe=69C327BF&_nc_sid=22de04"
                 alt="Logo Terraar Brasil"
@@ -191,24 +190,24 @@ export default function Page() {
               />
             </div>
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-orange-400">Terraar Brasil</p>
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#f99c2c]">Terraar Brasil</p>
               <p className="text-xs text-zinc-400">Aluguel de Plataformas Elevatórias Tesoura Elétricas</p>
             </div>
           </Link>
 
           <nav className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
-            <Link href="#frota" className="transition hover:text-orange-400">
+            <Link href="#frota" className="transition hover:text-[#f99c2c]">
               Frota
             </Link>
-            <Link href="#diferenciais" className="transition hover:text-orange-400">
+            <Link href="#diferenciais" className="transition hover:text-[#f99c2c]">
               Diferenciais
             </Link>
-            <Link href="#galeria" className="transition hover:text-orange-400">
+            <Link href="#galeria" className="transition hover:text-[#f99c2c]">
               Galeria
             </Link>
           </nav>
 
-          <Link href={WHATSAPP_URL} target="_blank" className="rounded-full bg-orange-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-orange-400">
+          <Link href={WHATSAPP_URL} target="_blank" className="rounded-full bg-[#f99c2c] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e08a21]">
             WhatsApp
           </Link>
         </div>
@@ -244,7 +243,7 @@ export default function Page() {
                 aria-label={`Ir para imagem ${index + 1}`}
                 onClick={() => setActiveHeroImage(index)}
                 className={`h-2.5 rounded-full transition-all ${
-                  activeHeroImage === index ? "w-10 bg-orange-500" : "w-2.5 bg-white/50"
+                  activeHeroImage === index ? "w-10 bg-[#f99c2c]" : "w-2.5 bg-white/50"
                 }`}
               />
             ))}
@@ -254,12 +253,12 @@ export default function Page() {
         <div className="relative mx-auto w-full max-w-7xl px-4 pt-28 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr]">
           <div className="max-w-3xl">
-            <span className="inline-flex rounded-full border border-orange-500/30 bg-orange-500/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.3em] text-orange-300">
+            <span className="inline-flex rounded-full border border-[rgba(249,156,44,0.3)] bg-[rgba(249,156,44,0.1)] px-4 py-2 text-xs font-medium uppercase tracking-[0.3em] text-[#f99c2c]">
               Terraar Brasil
             </span>
             <h1 className="mt-6 text-5xl font-black uppercase leading-none tracking-tight text-white sm:text-6xl lg:text-7xl">
               Acesso seguro em altura
-              <span className="block text-orange-500">para sua obra e indústria</span>
+              <span className="block text-[#f99c2c]">para sua obra e indústria</span>
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
               Plataformas elevatórias elétricas para trabalho em altura com segurança e agilidade.
@@ -268,14 +267,14 @@ export default function Page() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
                 href="#formulario"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-orange-500 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-orange-400"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f99c2c] px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#e08a21]"
               >
                 Solicitar orçamento
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="#frota"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:border-orange-500/60 hover:bg-orange-500/10"
+                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:border-[rgba(249,156,44,0.6)] hover:bg-[rgba(249,156,44,0.1)]"
               >
                 Ver frota
               </Link>
@@ -284,8 +283,8 @@ export default function Page() {
           </div>
 
           <div className="flex items-start lg:pt-[4.5rem]">
-            <div className="w-full rounded-[2rem] border border-orange-500/20 bg-white/5 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-md">
-              <p className="text-sm uppercase tracking-[0.3em] text-orange-400">Terraar em campo</p>
+            <div className="w-full rounded-[2rem] border border-[rgba(249,156,44,0.2)] bg-white/5 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-md">
+              <p className="text-sm uppercase tracking-[0.3em] text-[#f99c2c]">Terraar em campo</p>
               <h2 className="mt-3 text-2xl font-bold text-white">
                 Equipamento certo, no momento certo, com presença de marca forte.
               </h2>
@@ -293,7 +292,7 @@ export default function Page() {
                 {specs.map(({ icon: Icon, title, text }) => (
                   <div key={title} className="rounded-2xl border border-white/10 bg-zinc-900/70 p-4">
                     <div className="flex items-center gap-3">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-orange-500 text-white">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f99c2c] text-white">
                         <Icon className="h-5 w-5" />
                       </div>
                       <div>
@@ -314,7 +313,7 @@ export default function Page() {
                 key={item}
                 className="flex min-h-[100px] items-start gap-4 rounded-[1.75rem] border border-white/10 bg-black/42 px-6 py-4 backdrop-blur-md"
               >
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-orange-500" />
+                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#f99c2c]" />
                 <p className="text-base leading-8 text-zinc-100">{item}</p>
               </div>
             ))}
@@ -332,37 +331,16 @@ export default function Page() {
         </div>
 
         <div className="mt-10 flex justify-center">
-          <div className="w-full max-w-md overflow-hidden rounded-[2rem] border border-orange-500/20 bg-zinc-900 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
-            <div className="relative aspect-[9/16] w-full bg-black">
-              <video
-                ref={videoRef}
-                src={FEATURED_VIDEO}
-                controls
-                preload="metadata"
-                onPlay={() => setIsVideoPlaying(true)}
-                onPause={() => setIsVideoPlaying(false)}
-                onEnded={() => setIsVideoPlaying(false)}
-                className="h-full w-full object-contain"
+          <div className="w-full max-w-5xl overflow-hidden rounded-[2rem] border border-[rgba(249,156,44,0.2)] bg-zinc-900 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
+            <div className="relative aspect-video w-full bg-black">
+              <iframe
+                src={INSTITUTIONAL_VIDEO_EMBED}
+                title="Video institucional Terraar Brasil"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                className="absolute inset-0 h-full w-full"
               />
-
-              {!isVideoPlaying ? (
-                <button
-                  type="button"
-                  onClick={() => {
-                    videoRef.current?.play();
-                  }}
-                  className="absolute inset-0 flex items-center justify-center bg-black/18 transition hover:bg-black/10"
-                >
-                  <span className="flex flex-col items-center gap-4">
-                    <span className="flex h-24 w-24 items-center justify-center rounded-full bg-orange-500 text-white shadow-[0_0_55px_rgba(249,115,22,0.5)] transition hover:scale-105">
-                      <Play className="ml-1 h-10 w-10 fill-current" />
-                    </span>
-                    <span className="rounded-full border border-orange-500/30 bg-zinc-950/80 px-5 py-2 text-sm font-bold uppercase tracking-[0.2em] text-white backdrop-blur">
-                      Aperte o play
-                    </span>
-                  </span>
-                </button>
-              ) : null}
             </div>
           </div>
         </div>
@@ -370,7 +348,7 @@ export default function Page() {
         <div className="mt-8 flex justify-center">
           <Link
             href="#formulario"
-            className="inline-flex items-center gap-2 rounded-full border border-orange-500/40 bg-orange-500/10 px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-orange-300 transition hover:bg-orange-500 hover:text-white"
+            className="inline-flex items-center gap-2 rounded-full border border-[rgba(249,156,44,0.4)] bg-[rgba(249,156,44,0.1)] px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-[#f99c2c] transition hover:bg-[#f99c2c] hover:text-white"
           >
             Quero atendimento rápido
             <ArrowRight className="h-4 w-4" />
@@ -399,7 +377,7 @@ export default function Page() {
                   className="object-cover transition duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-                <div className="absolute left-4 top-4 rounded-full border border-orange-500/30 bg-black/65 px-3 py-1 text-xs font-bold uppercase tracking-[0.25em] text-orange-300">
+                <div className="absolute left-4 top-4 rounded-full border border-[rgba(249,156,44,0.3)] bg-black/65 px-3 py-1 text-xs font-bold uppercase tracking-[0.25em] text-[#f99c2c]">
                   {item.model}
                 </div>
               </div>
@@ -414,7 +392,7 @@ export default function Page() {
         <div className="mt-10 flex justify-center">
           <Link
             href="#formulario"
-            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-orange-400"
+            className="inline-flex items-center gap-2 rounded-full bg-[#f99c2c] px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#e08a21]"
           >
             Solicitar cotação da frota
             <ArrowRight className="h-4 w-4" />
@@ -422,8 +400,10 @@ export default function Page() {
         </div>
       </section>
 
+      <CalculadoraPlataformas />
+
       <section id="diferenciais" className="section-shell">
-        <div className="rounded-[2rem] border border-orange-500/20 bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 p-8 sm:p-10">
+        <div className="rounded-[2rem] border border-[rgba(249,156,44,0.2)] bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 p-8 sm:p-10">
           <div className="section-header !max-w-3xl !px-0 !pb-0">
             <p className="section-kicker">Por que escolher a Terraar?</p>
             <h2 className="section-title">Quebra de objeção com credibilidade, rapidez e presença profissional</h2>
@@ -432,7 +412,7 @@ export default function Page() {
           <div className="mt-10 grid gap-6 md:grid-cols-3">
             {reasons.map(({ icon: Icon, title, text }) => (
               <div key={title} className="rounded-[1.75rem] border border-white/10 bg-white/5 p-8">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-orange-500 text-white">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#f99c2c] text-white">
                   <Icon className="h-9 w-9" />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold text-white">{title}</h3>
@@ -444,7 +424,7 @@ export default function Page() {
           <div className="mt-10 flex justify-center">
             <Link
               href="#formulario"
-              className="inline-flex items-center gap-2 rounded-full border border-orange-500/40 bg-orange-500/10 px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-orange-300 transition hover:bg-orange-500 hover:text-white"
+              className="inline-flex items-center gap-2 rounded-full border border-[rgba(249,156,44,0.4)] bg-[rgba(249,156,44,0.1)] px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-[#f99c2c] transition hover:bg-[#f99c2c] hover:text-white"
             >
               Falar com um especialista
               <ArrowRight className="h-4 w-4" />
@@ -480,7 +460,7 @@ export default function Page() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-5">
-                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange-300">Galeria</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#f99c2c]">Galeria</p>
                   <h3 className="mt-2 text-2xl font-bold text-white">{item.title}</h3>
                   <p className="mt-2 max-w-md text-sm leading-6 text-zinc-300">{item.description}</p>
                 </div>
@@ -492,7 +472,7 @@ export default function Page() {
         <div className="mt-10 flex justify-center">
           <Link
             href="#formulario"
-            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-orange-400"
+            className="inline-flex items-center gap-2 rounded-full bg-[#f99c2c] px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#e08a21]"
           >
             Pedir proposta agora
             <ArrowRight className="h-4 w-4" />
@@ -503,7 +483,7 @@ export default function Page() {
           <Link
             href={INSTAGRAM_URL}
             target="_blank"
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:border-orange-500/50 hover:bg-orange-500/10"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:border-[rgba(249,156,44,0.5)] hover:bg-[rgba(249,156,44,0.1)]"
           >
             <Instagram className="h-4 w-4" />
             Siga a gente no Instagram
@@ -512,7 +492,7 @@ export default function Page() {
       </section>
 
       <section className="section-shell pb-24">
-        <div className="relative overflow-hidden rounded-[2rem] border border-orange-500/20 bg-orange-500 px-8 py-12 text-zinc-950 shadow-[0_25px_80px_rgba(249,115,22,0.25)] sm:px-12">
+        <div className="relative overflow-hidden rounded-[2rem] border border-[rgba(249,156,44,0.2)] bg-[#f99c2c] px-8 py-12 text-zinc-950 shadow-[0_25px_80px_rgba(249,156,44,0.25)] sm:px-12">
           <div className="absolute right-0 top-0 h-56 w-56 rounded-full bg-white/20 blur-3xl" />
           <div className="relative grid gap-10 lg:grid-cols-[1fr_430px] lg:items-center">
             <div className="max-w-4xl">
@@ -534,7 +514,7 @@ export default function Page() {
               className="rounded-[1.75rem] border border-zinc-950/10 bg-zinc-950 p-6 text-white shadow-[0_18px_60px_rgba(0,0,0,0.25)]"
             >
               <div className="mb-5">
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-orange-400">Solicite contato</p>
+                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#f99c2c]">Solicite contato</p>
                 <h3 className="mt-2 text-2xl font-bold">Formulário rápido</h3>
                 <p className="mt-2 text-sm leading-6 text-zinc-400">
                   Preencha e nossa equipe retorna com agilidade para indicar a plataforma ideal.
@@ -545,14 +525,14 @@ export default function Page() {
                 <input
                   type="text"
                   placeholder="Seu nome"
-                  className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-orange-500"
+                  className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#f99c2c]"
                 />
                 <input
                   type="tel"
                   placeholder="WhatsApp"
-                  className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-orange-500"
+                  className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#f99c2c]"
                 />
-                <select className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition focus:border-orange-500">
+                <select className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition focus:border-[#f99c2c]">
                   <option className="bg-zinc-950">Tipo de plataforma</option>
                   <option className="bg-zinc-950">S0807AC</option>
                   <option className="bg-zinc-950">S1412AC+</option>
@@ -561,13 +541,13 @@ export default function Page() {
                 <textarea
                   placeholder="Conte rapidamente sua necessidade"
                   rows={4}
-                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-orange-500"
+                  className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#f99c2c]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-orange-500 px-6 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-orange-400"
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#f99c2c] px-6 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#e08a21]"
               >
                 Enviar solicitação
                 <ArrowRight className="h-4 w-4" />
@@ -581,11 +561,11 @@ export default function Page() {
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 text-center text-sm text-zinc-500 sm:px-6 md:flex-row md:text-left lg:px-8">
           <p>Terraar Brasil • Aluguel de máquinas pesadas para terraplanagem em Jundiaí-SP</p>
           <div className="flex flex-col items-center gap-3 md:flex-row">
-            <Link href={INSTAGRAM_URL} target="_blank" className="inline-flex items-center gap-2 text-orange-400 transition hover:text-orange-300">
+            <Link href={INSTAGRAM_URL} target="_blank" className="inline-flex items-center gap-2 text-[#f99c2c] transition hover:text-[#ffb347]">
               <Instagram className="h-4 w-4" />
               Siga a gente no Instagram
             </Link>
-            <Link href={WHATSAPP_URL} target="_blank" className="text-orange-400 transition hover:text-orange-300">
+            <Link href={WHATSAPP_URL} target="_blank" className="text-[#f99c2c] transition hover:text-[#ffb347]">
               Solicitar orçamento
             </Link>
           </div>
@@ -598,7 +578,7 @@ export default function Page() {
             type="button"
             onClick={() => setActiveGalleryIndex(null)}
             aria-label="Fechar galeria"
-            className="absolute right-4 top-4 rounded-full border border-white/15 bg-white/10 p-3 text-white transition hover:bg-orange-500"
+            className="absolute right-4 top-4 rounded-full border border-white/15 bg-white/10 p-3 text-white transition hover:bg-[#f99c2c]"
           >
             <X className="h-5 w-5" />
           </button>
@@ -607,7 +587,7 @@ export default function Page() {
             type="button"
             onClick={() => setActiveGalleryIndex((activeGalleryIndex - 1 + gallery.length) % gallery.length)}
             aria-label="Foto anterior"
-            className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-orange-500"
+            className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-[#f99c2c]"
           >
             <ChevronUp className="h-5 w-5 -rotate-90" />
           </button>
@@ -623,7 +603,7 @@ export default function Page() {
               />
             </div>
             <div className="border-t border-white/10 p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-orange-300">Galeria Terraar</p>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#f99c2c]">Galeria Terraar</p>
               <h3 className="mt-2 text-2xl font-bold text-white">{gallery[activeGalleryIndex].title}</h3>
               <p className="mt-2 text-sm leading-7 text-zinc-300">{gallery[activeGalleryIndex].description}</p>
             </div>
@@ -633,7 +613,7 @@ export default function Page() {
             type="button"
             onClick={() => setActiveGalleryIndex((activeGalleryIndex + 1) % gallery.length)}
             aria-label="Próxima foto"
-            className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-orange-500"
+            className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-[#f99c2c]"
           >
             <ChevronUp className="h-5 w-5 rotate-90" />
           </button>
@@ -656,7 +636,7 @@ export default function Page() {
 
       <Link
         href="#top"
-        className="fixed bottom-5 right-5 z-[70] flex h-14 w-14 items-center justify-center rounded-full border border-orange-500/30 bg-zinc-950/90 text-orange-400 shadow-[0_18px_40px_rgba(0,0,0,0.35)] backdrop-blur transition hover:-translate-y-1 hover:bg-orange-500 hover:text-white"
+        className="fixed bottom-5 right-5 z-[70] flex h-14 w-14 items-center justify-center rounded-full border border-[rgba(249,156,44,0.3)] bg-zinc-950/90 text-[#f99c2c] shadow-[0_18px_40px_rgba(0,0,0,0.35)] backdrop-blur transition hover:-translate-y-1 hover:bg-[#f99c2c] hover:text-white"
         aria-label="Voltar ao topo"
       >
         <ChevronUp className="h-6 w-6" />
