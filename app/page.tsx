@@ -3,10 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Clock3, ShieldCheck, Truck, X, ArrowRight, CheckCircle2, BadgeCheck, BatteryCharging, Building2, ChevronUp, MessageCircleMore, Play } from "lucide-react";
+import { Clock3, ShieldCheck, Truck, X, ArrowRight, CheckCircle2, BadgeCheck, BatteryCharging, Building2, ChevronUp, MessageCircleMore, Play, Instagram } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const WHATSAPP_URL = "https://wa.me/5511999999999";
+const INSTAGRAM_URL = "https://www.instagram.com/terraar.brasil/";
 const FEATURED_VIDEO = "/videos/terraar-destaque.mp4";
 
 const fleet = [
@@ -497,6 +498,17 @@ export default function Page() {
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
+
+        <div className="mt-5 flex justify-center">
+          <Link
+            href={INSTAGRAM_URL}
+            target="_blank"
+            className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:border-orange-500/50 hover:bg-orange-500/10"
+          >
+            <Instagram className="h-4 w-4" />
+            Siga a gente no Instagram
+          </Link>
+        </div>
       </section>
 
       <section className="section-shell pb-24">
@@ -568,9 +580,15 @@ export default function Page() {
       <footer className="border-t border-white/10 bg-black">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 text-center text-sm text-zinc-500 sm:px-6 md:flex-row md:text-left lg:px-8">
           <p>Terraar Brasil • Aluguel de máquinas pesadas para terraplanagem em Jundiaí-SP</p>
-          <Link href={WHATSAPP_URL} target="_blank" className="text-orange-400 transition hover:text-orange-300">
-            Solicitar orçamento
-          </Link>
+          <div className="flex flex-col items-center gap-3 md:flex-row">
+            <Link href={INSTAGRAM_URL} target="_blank" className="inline-flex items-center gap-2 text-orange-400 transition hover:text-orange-300">
+              <Instagram className="h-4 w-4" />
+              Siga a gente no Instagram
+            </Link>
+            <Link href={WHATSAPP_URL} target="_blank" className="text-orange-400 transition hover:text-orange-300">
+              Solicitar orçamento
+            </Link>
+          </div>
         </div>
       </footer>
 
