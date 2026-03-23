@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Clock3, ShieldCheck, Truck, X, ArrowRight, CheckCircle2, BadgeCheck, BatteryCharging, Building2, ChevronUp, MessageCircleMore } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Clock3, ShieldCheck, Truck, X, ArrowRight, CheckCircle2, BadgeCheck, BatteryCharging, Building2, ChevronUp, MessageCircleMore, Play } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 
 const WHATSAPP_URL = "https://wa.me/5511999999999";
 const FEATURED_VIDEO = "/videos/terraar-destaque.mp4";
@@ -114,9 +114,11 @@ const heroImages = [
 
 export default function Page() {
   const router = useRouter();
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState<number | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeHeroImage, setActiveHeroImage] = useState(0);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
 
   useEffect(() => {
     if (activeGalleryIndex === null) return;
@@ -330,15 +332,38 @@ export default function Page() {
 
         <div className="mt-10 flex justify-center">
           <div className="w-full max-w-md overflow-hidden rounded-[2rem] border border-orange-500/20 bg-zinc-900 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
-          <div className="relative aspect-[9/16] w-full bg-black">
-            <video
-              src={FEATURED_VIDEO}
-              controls
-              preload="metadata"
-              className="h-full w-full object-contain"
-            />
+            <div className="relative aspect-[9/16] w-full bg-black">
+              <video
+                ref={videoRef}
+                src={FEATURED_VIDEO}
+                controls
+                preload="metadata"
+                onPlay={() => setIsVideoPlaying(true)}
+                onPause={() => setIsVideoPlaying(false)}
+                onEnded={() => setIsVideoPlaying(false)}
+                className="h-full w-full object-contain"
+              />
+
+              {!isVideoPlaying ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    videoRef.current?.play();
+                  }}
+                  className="absolute inset-0 flex items-center justify-center bg-black/18 transition hover:bg-black/10"
+                >
+                  <span className="flex flex-col items-center gap-4">
+                    <span className="flex h-24 w-24 items-center justify-center rounded-full bg-orange-500 text-white shadow-[0_0_55px_rgba(249,115,22,0.5)] transition hover:scale-105">
+                      <Play className="ml-1 h-10 w-10 fill-current" />
+                    </span>
+                    <span className="rounded-full border border-orange-500/30 bg-zinc-950/80 px-5 py-2 text-sm font-bold uppercase tracking-[0.2em] text-white backdrop-blur">
+                      Aperte o play
+                    </span>
+                  </span>
+                </button>
+              ) : null}
+            </div>
           </div>
-        </div>
         </div>
 
         <div className="mt-8 flex justify-center">
