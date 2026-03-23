@@ -3,13 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Clock3, ShieldCheck, Truck, Play, X, ArrowRight, CheckCircle2, BadgeCheck, BatteryCharging, Building2, ChevronUp, MessageCircleMore } from "lucide-react";
+import { Clock3, ShieldCheck, Truck, X, ArrowRight, CheckCircle2, BadgeCheck, BatteryCharging, Building2, ChevronUp, MessageCircleMore } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const WHATSAPP_URL = "https://wa.me/5511999999999";
-const REEL_EMBED_URL = "https://www.instagram.com/reel/DP4cxlBkXfF/embed";
-const REEL_THUMBNAIL =
-  "https://scontent-sjc6-1.cdninstagram.com/v/t51.82787-15/565107502_17873113893440356_6604215620682136566_n.jpg?stp=dst-jpg_e15_fr_p1080x1080_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6ImltYWdlX3VybGdlbi4xMDgweDE5MjAuc2RyLmY4Mjc4Ny5kZWZhdWx0X2NvdmVyX2ZyYW1lLmMyIn0&_nc_ht=scontent-sjc6-1.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2gHFso4RqK71aMH9Uc5PnWivaaWZtfOTeExs0kMX75Gjcr4h_sfmNiAGE_M2tjAWeNM&_nc_ohc=EQ8t9iaiCA4Q7kNvwGbLpcU&_nc_gid=jv9MosY-2njxv6lNj0O9KA&edm=ANTKIIoBAAAA&ccb=7-5&oh=00_AfztCDGU5BeQ4IN5WLSJtx4BMKAYThnBmE5clu7QqYxXoA&oe=69C31D34&_nc_sid=d885a2";
+const FEATURED_VIDEO = "/videos/terraar-destaque.mp4";
 
 const fleet = [
   {
@@ -116,17 +114,9 @@ const heroImages = [
 
 export default function Page() {
   const router = useRouter();
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState<number | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [activeHeroImage, setActiveHeroImage] = useState(0);
-
-  useEffect(() => {
-    document.body.style.overflow = isModalOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isModalOpen]);
 
   useEffect(() => {
     if (activeGalleryIndex === null) return;
@@ -341,27 +331,16 @@ export default function Page() {
           </p>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setIsModalOpen(true)}
-          className="group relative mt-10 block overflow-hidden rounded-[2rem] border border-orange-500/20 bg-zinc-900"
-        >
-          <div className="relative aspect-[16/9] w-full">
-            <Image
-              src={REEL_THUMBNAIL}
-              alt="Thumbnail do Reel Terraar"
-              fill
-              sizes="(max-width: 1280px) 100vw, 1200px"
-              className="object-cover transition duration-500 group-hover:scale-105"
+        <div className="mt-10 overflow-hidden rounded-[2rem] border border-orange-500/20 bg-zinc-900 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
+          <div className="relative aspect-[16/9] w-full bg-black">
+            <video
+              src={FEATURED_VIDEO}
+              controls
+              preload="metadata"
+              className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-black/10" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="flex h-24 w-24 items-center justify-center rounded-full bg-orange-500 text-white shadow-[0_0_50px_rgba(249,115,22,0.45)] transition group-hover:scale-110">
-                <Play className="ml-1 h-11 w-11 fill-current" />
-              </span>
-            </div>
           </div>
-        </button>
+        </div>
 
         <div className="mt-8 flex justify-center">
           <Link
@@ -570,30 +549,6 @@ export default function Page() {
           </Link>
         </div>
       </footer>
-
-      {isModalOpen ? (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
-          <button
-            type="button"
-            onClick={() => setIsModalOpen(false)}
-            aria-label="Fechar modal"
-            className="absolute right-4 top-4 rounded-full border border-white/15 bg-white/10 p-3 text-white transition hover:bg-orange-500"
-          >
-            <X className="h-5 w-5" />
-          </button>
-          <div className="w-full max-w-4xl overflow-hidden rounded-[1.75rem] border border-orange-500/30 bg-zinc-950 shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
-            <div className="relative aspect-[16/9] w-full">
-              <iframe
-                src={`${REEL_EMBED_URL}?autoplay=1`}
-                title="Instagram Reel Terraar"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full"
-              />
-            </div>
-          </div>
-        </div>
-      ) : null}
 
       {activeGalleryIndex !== null ? (
         <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
