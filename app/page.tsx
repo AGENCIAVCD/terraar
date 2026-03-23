@@ -331,15 +331,17 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="mt-10 overflow-hidden rounded-[2rem] border border-orange-500/20 bg-zinc-900 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
-          <div className="relative aspect-[16/9] w-full bg-black">
+        <div className="mt-10 flex justify-center">
+          <div className="w-full max-w-md overflow-hidden rounded-[2rem] border border-orange-500/20 bg-zinc-900 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
+          <div className="relative aspect-[9/16] w-full bg-black">
             <video
               src={FEATURED_VIDEO}
               controls
               preload="metadata"
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain"
             />
           </div>
+        </div>
         </div>
 
         <div className="mt-8 flex justify-center">
