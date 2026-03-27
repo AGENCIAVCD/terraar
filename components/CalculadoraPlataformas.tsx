@@ -69,6 +69,7 @@ export default function CalculadoraPlataformas() {
   const [alcance, setAlcance] = useState(5);
   const [cargaMinima, setCargaMinima] = useState(250);
   const [mostrarResultados, setMostrarResultados] = useState(false);
+  const mostrarAvisoCargaTesoura = abaAtiva === "tesoura" && cargaMinima >= 450;
 
   const alturaMaxima = abaAtiva === "tesoura" ? MAX_ALTURA_TESOURA : MAX_ALTURA_ARTICULADA;
 
@@ -190,6 +191,12 @@ export default function CalculadoraPlataformas() {
                   </option>
                 ))}
               </select>
+
+              {mostrarAvisoCargaTesoura ? (
+                <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-medium text-amber-800">
+                  Para suportar essa carga, seria interessante contratar a plataforma articulada ou telescópica.
+                </div>
+              ) : null}
             </div>
 
             <button
@@ -255,7 +262,11 @@ export default function CalculadoraPlataformas() {
             ) : (
               <div className="rounded-3xl bg-white p-8 text-center shadow-lg ring-1 ring-black/5">
                 <p className="text-lg font-semibold text-gray-900">Nenhum modelo encontrado com esses filtros.</p>
-                <p className="mt-2 text-gray-600">Ajuste altura, alcance ou carga para ver mais opções.</p>
+                <p className="mt-2 text-gray-600">
+                  {mostrarAvisoCargaTesoura
+                    ? "Para suportar essa carga, seria interessante contratar a plataforma articulada ou telescópica."
+                    : "Ajuste altura, alcance ou carga para ver mais opções."}
+                </p>
               </div>
             )}
           </div>
@@ -283,20 +294,20 @@ export default function CalculadoraPlataformas() {
                   <thead className="bg-[#f99c2c] text-white">
                     <tr>
                       <th className="px-4 py-4 text-left font-semibold">Descrição</th>
-                      <th className="px-4 py-4 text-left font-semibold">Altura (m)</th>
-                      <th className="px-4 py-4 text-left font-semibold">Prolongamento (m)</th>
-                      <th className="px-4 py-4 text-left font-semibold">Largura (m)</th>
-                      <th className="px-4 py-4 text-left font-semibold">Suporte (kg)</th>
+                      <th className="px-4 py-4 text-center align-middle font-semibold">Altura (m)</th>
+                      <th className="px-4 py-4 text-center align-middle font-semibold">Prolongamento (m)</th>
+                      <th className="px-4 py-4 text-center align-middle font-semibold">Largura (m)</th>
+                      <th className="px-4 py-4 text-center align-middle font-semibold">Suporte (kg)</th>
                     </tr>
                   </thead>
                   <tbody>
                     {tesouras.map((item, index) => (
-                      <tr key={item.descricao} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                        <td className="px-4 py-4 text-gray-900">{item.descricao}</td>
-                        <td className="px-4 py-4 text-gray-700">{formatarNumero(item.altura)}</td>
-                        <td className="px-4 py-4 text-gray-700">{formatarNumero(item.prolongamento)}</td>
-                        <td className="px-4 py-4 text-gray-700">{formatarNumero(item.largura)}</td>
-                        <td className="px-4 py-4 text-gray-700">{formatarNumero(item.suporte)}</td>
+                      <tr key={item.descricao} className={index % 2 === 0 ? "bg-white align-middle" : "bg-gray-50 align-middle"}>
+                        <td className="px-4 py-4 align-middle text-gray-900">{item.descricao}</td>
+                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.altura)}</td>
+                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.prolongamento)}</td>
+                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.largura)}</td>
+                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.suporte)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -326,22 +337,22 @@ export default function CalculadoraPlataformas() {
                   <thead className="bg-[#f99c2c] text-white">
                     <tr>
                       <th className="px-4 py-4 text-left font-semibold">Descrição</th>
-                      <th className="px-4 py-4 text-left font-semibold">Altura (m)</th>
-                      <th className="px-4 py-4 text-left font-semibold">Alcance (m)</th>
-                      <th className="px-4 py-4 text-left font-semibold">Largura (m)</th>
-                      <th className="px-4 py-4 text-left font-semibold">Suporte (kg)</th>
+                      <th className="px-4 py-4 text-center align-middle font-semibold">Altura (m)</th>
+                      <th className="px-4 py-4 text-center align-middle font-semibold">Alcance (m)</th>
+                      <th className="px-4 py-4 text-center align-middle font-semibold">Largura (m)</th>
+                      <th className="px-4 py-4 text-center align-middle font-semibold">Suporte (kg)</th>
                     </tr>
                   </thead>
                   <tbody>
                     {articuladas.map((item, index) => (
-                      <tr key={item.descricao} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                        <td className="px-4 py-4 text-gray-900">{item.descricao}</td>
-                        <td className="px-4 py-4 text-gray-700">{formatarNumero(item.altura)}</td>
-                        <td className="px-4 py-4 text-gray-700">{formatarNumero(item.alcance)}</td>
-                        <td className="px-4 py-4 text-gray-700">
+                      <tr key={item.descricao} className={index % 2 === 0 ? "bg-white align-middle" : "bg-gray-50 align-middle"}>
+                        <td className="px-4 py-4 align-middle text-gray-900">{item.descricao}</td>
+                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.altura)}</td>
+                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.alcance)}</td>
+                        <td className="px-4 py-4 text-center align-middle text-gray-700">
                           {typeof item.largura === "number" ? formatarNumero(item.largura) : item.largura}
                         </td>
-                        <td className="px-4 py-4 text-gray-700">{formatarNumero(item.suporte)}</td>
+                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.suporte)}</td>
                       </tr>
                     ))}
                   </tbody>
