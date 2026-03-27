@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, BadgeCheck, Calculator, Truck } from "lucide-react";
+import { ArrowRight, BadgeCheck, Calculator, ChevronDown, Truck } from "lucide-react";
 
 type TabType = "tesoura" | "articulada";
 
@@ -69,6 +69,8 @@ export default function CalculadoraPlataformas() {
   const [alcance, setAlcance] = useState(5);
   const [cargaMinima, setCargaMinima] = useState(250);
   const [mostrarResultados, setMostrarResultados] = useState(false);
+  const [tesourasExpandidas, setTesourasExpandidas] = useState(false);
+  const [articuladasExpandidas, setArticuladasExpandidas] = useState(false);
   const mostrarAvisoCargaTesoura = abaAtiva === "tesoura" && cargaMinima >= 450;
 
   const alturaMaxima = abaAtiva === "tesoura" ? MAX_ALTURA_TESOURA : MAX_ALTURA_ARTICULADA;
@@ -274,96 +276,120 @@ export default function CalculadoraPlataformas() {
 
         <div className="mt-20 space-y-12">
           <div className="overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-black/5">
-            <div className="bg-[#f99c2c] px-6 py-5 text-white">
-              <h3 className="text-2xl font-bold">PLATAFORMAS ELEVATÓRIAS TESOURAS</h3>
-            </div>
-
-            <div className="p-6 sm:p-8">
-              <p className="whitespace-pre-line text-base leading-8 text-gray-700">
-                A Plataforma Tesoura é ideal para trabalhos em altura que exigem segurança e
-                estabilidade. Possuímos uma linha completa para diferentes alturas e necessidades.
-                Esse equipamento funciona como um andaime móvel, utilizando um sistema tipo
-                acordeão para elevar e abaixar a plataforma verticalmente.
-                É indicada para construção, manutenção e instalações em ambientes internos ou
-                externos, desde que em superfície firme e nivelada, sendo muito utilizada também
-                em construções, indústrias, estoques e armazéns.
-              </p>
-
-              <div className="mt-8 overflow-x-auto rounded-2xl border border-gray-200">
-                <table className="min-w-full border-collapse text-sm">
-                  <thead className="bg-[#f99c2c] text-white">
-                    <tr>
-                      <th className="px-4 py-4 text-left font-semibold">Descrição</th>
-                      <th className="px-4 py-4 text-center align-middle font-semibold">Altura (m)</th>
-                      <th className="px-4 py-4 text-center align-middle font-semibold">Prolongamento (m)</th>
-                      <th className="px-4 py-4 text-center align-middle font-semibold">Largura (m)</th>
-                      <th className="px-4 py-4 text-center align-middle font-semibold">Suporte (kg)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {tesouras.map((item, index) => (
-                      <tr key={item.descricao} className={index % 2 === 0 ? "bg-white align-middle" : "bg-gray-50 align-middle"}>
-                        <td className="px-4 py-4 align-middle text-gray-900">{item.descricao}</td>
-                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.altura)}</td>
-                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.prolongamento)}</td>
-                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.largura)}</td>
-                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.suporte)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+            <button
+              type="button"
+              onClick={() => setTesourasExpandidas((prev) => !prev)}
+              className="flex w-full items-center justify-between bg-[#f99c2c] px-6 py-5 text-left text-white transition hover:bg-[#ee9427]"
+              aria-expanded={tesourasExpandidas}
+            >
+              <div>
+                <h3 className="text-2xl font-bold">PLATAFORMAS ELEVATÓRIAS TESOURAS</h3>
+                <p className="mt-1 text-sm text-white/85">
+                  {tesourasExpandidas ? "Clique para recolher a tabela" : "Clique para visualizar a tabela"}
+                </p>
               </div>
+              <ChevronDown className={`h-6 w-6 transition-transform duration-300 ${tesourasExpandidas ? "rotate-180" : ""}`} />
+            </button>
 
-            </div>
+            {tesourasExpandidas ? (
+              <div className="p-6 sm:p-8">
+                <p className="whitespace-pre-line text-base leading-8 text-gray-700">
+                  A Plataforma Tesoura é ideal para trabalhos em altura que exigem segurança e
+                  estabilidade. Possuímos uma linha completa para diferentes alturas e necessidades.
+                  Esse equipamento funciona como um andaime móvel, utilizando um sistema tipo
+                  acordeão para elevar e abaixar a plataforma verticalmente.
+                  É indicada para construção, manutenção e instalações em ambientes internos ou
+                  externos, desde que em superfície firme e nivelada, sendo muito utilizada também
+                  em construções, indústrias, estoques e armazéns.
+                </p>
+
+                <div className="mt-8 overflow-x-auto rounded-2xl border border-gray-200">
+                  <table className="min-w-full border-collapse text-sm">
+                    <thead className="bg-[#f99c2c] text-white">
+                      <tr>
+                        <th className="px-4 py-4 text-left font-semibold">Descrição</th>
+                        <th className="px-4 py-4 text-center align-middle font-semibold">Altura (m)</th>
+                        <th className="px-4 py-4 text-center align-middle font-semibold">Prolongamento (m)</th>
+                        <th className="px-4 py-4 text-center align-middle font-semibold">Largura (m)</th>
+                        <th className="px-4 py-4 text-center align-middle font-semibold">Suporte (kg)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tesouras.map((item, index) => (
+                        <tr key={item.descricao} className={index % 2 === 0 ? "bg-white align-middle" : "bg-gray-50 align-middle"}>
+                          <td className="px-4 py-4 align-middle text-gray-900">{item.descricao}</td>
+                          <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.altura)}</td>
+                          <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.prolongamento)}</td>
+                          <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.largura)}</td>
+                          <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.suporte)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ) : null}
           </div>
 
           <div className="overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-black/5">
-            <div className="bg-[#f99c2c] px-6 py-5 text-white">
-              <h3 className="text-2xl font-bold">PLATAFORMAS ELEVATÓRIAS ARTICULADAS</h3>
-            </div>
-
-            <div className="p-6 sm:p-8">
-              <p className="whitespace-pre-line text-base leading-8 text-gray-700">
-                As plataformas elevatórias articuladas são indicadas para trabalhos em altura que
-                exigem alcance lateral, flexibilidade e acesso a locais de difícil alcance. Sua estrutura
-                articulada permite superar obstáculos com facilidade, garantindo segurança e
-                manobrabilidade em áreas restritas, internas ou externas. São amplamente
-                utilizadas em obras industriais, construção civil, manutenção, instalações e serviços
-                em terrenos irregulares.
-              </p>
-
-              <div className="mt-8 overflow-x-auto rounded-2xl border border-gray-200">
-                <table className="min-w-full border-collapse text-sm">
-                  <thead className="bg-[#f99c2c] text-white">
-                    <tr>
-                      <th className="px-4 py-4 text-left font-semibold">Descrição</th>
-                      <th className="px-4 py-4 text-center align-middle font-semibold">Altura (m)</th>
-                      <th className="px-4 py-4 text-center align-middle font-semibold">Alcance (m)</th>
-                      <th className="px-4 py-4 text-center align-middle font-semibold">Largura (m)</th>
-                      <th className="px-4 py-4 text-center align-middle font-semibold">Suporte (kg)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {articuladas.map((item, index) => (
-                      <tr key={item.descricao} className={index % 2 === 0 ? "bg-white align-middle" : "bg-gray-50 align-middle"}>
-                        <td className="px-4 py-4 align-middle text-gray-900">{item.descricao}</td>
-                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.altura)}</td>
-                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.alcance)}</td>
-                        <td className="px-4 py-4 text-center align-middle text-gray-700">
-                          {typeof item.largura === "number" ? formatarNumero(item.largura) : item.largura}
-                        </td>
-                        <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.suporte)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+            <button
+              type="button"
+              onClick={() => setArticuladasExpandidas((prev) => !prev)}
+              className="flex w-full items-center justify-between bg-[#f99c2c] px-6 py-5 text-left text-white transition hover:bg-[#ee9427]"
+              aria-expanded={articuladasExpandidas}
+            >
+              <div>
+                <h3 className="text-2xl font-bold">PLATAFORMAS ELEVATÓRIAS ARTICULADAS</h3>
+                <p className="mt-1 text-sm text-white/85">
+                  {articuladasExpandidas ? "Clique para recolher a tabela" : "Clique para visualizar a tabela"}
+                </p>
               </div>
+              <ChevronDown className={`h-6 w-6 transition-transform duration-300 ${articuladasExpandidas ? "rotate-180" : ""}`} />
+            </button>
 
-              <p className="mt-5 text-sm font-medium text-gray-700">
-                * Para todos os modelos podemos oferecer com motor elétrico, diesel ou híbrido.
-              </p>
+            {articuladasExpandidas ? (
+              <div className="p-6 sm:p-8">
+                <p className="whitespace-pre-line text-base leading-8 text-gray-700">
+                  As plataformas elevatórias articuladas são indicadas para trabalhos em altura que
+                  exigem alcance lateral, flexibilidade e acesso a locais de difícil alcance. Sua estrutura
+                  articulada permite superar obstáculos com facilidade, garantindo segurança e
+                  manobrabilidade em áreas restritas, internas ou externas. São amplamente
+                  utilizadas em obras industriais, construção civil, manutenção, instalações e serviços
+                  em terrenos irregulares.
+                </p>
 
-            </div>
+                <div className="mt-8 overflow-x-auto rounded-2xl border border-gray-200">
+                  <table className="min-w-full border-collapse text-sm">
+                    <thead className="bg-[#f99c2c] text-white">
+                      <tr>
+                        <th className="px-4 py-4 text-left font-semibold">Descrição</th>
+                        <th className="px-4 py-4 text-center align-middle font-semibold">Altura (m)</th>
+                        <th className="px-4 py-4 text-center align-middle font-semibold">Alcance (m)</th>
+                        <th className="px-4 py-4 text-center align-middle font-semibold">Largura (m)</th>
+                        <th className="px-4 py-4 text-center align-middle font-semibold">Suporte (kg)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {articuladas.map((item, index) => (
+                        <tr key={item.descricao} className={index % 2 === 0 ? "bg-white align-middle" : "bg-gray-50 align-middle"}>
+                          <td className="px-4 py-4 align-middle text-gray-900">{item.descricao}</td>
+                          <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.altura)}</td>
+                          <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.alcance)}</td>
+                          <td className="px-4 py-4 text-center align-middle text-gray-700">
+                            {typeof item.largura === "number" ? formatarNumero(item.largura) : item.largura}
+                          </td>
+                          <td className="px-4 py-4 text-center align-middle text-gray-700">{formatarNumero(item.suporte)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+
+                <p className="mt-5 text-sm font-medium text-gray-700">
+                  * Para todos os modelos podemos oferecer com motor elétrico, diesel ou híbrido.
+                </p>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
