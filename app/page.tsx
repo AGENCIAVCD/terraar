@@ -4,7 +4,7 @@ import CalculadoraPlataformas from "@/components/CalculadoraPlataformas";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Clock3, ShieldCheck, Truck, X, ArrowRight, CheckCircle2, BadgeCheck, BatteryCharging, Building2, ChevronUp, MessageCircleMore, Instagram } from "lucide-react";
+import { Clock3, ShieldCheck, Truck, X, ArrowRight, ChevronUp, MessageCircleMore, Instagram } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const WHATSAPP_URL = "https://wa.me/5511999999999";
@@ -83,42 +83,10 @@ const reasons = [
   },
 ];
 
-const highlights = [
-  "S1412AC+ com até 13,8 m de altura de trabalho e 408 kg de capacidade",
-  "S0807AC+ compacta, elétrica e ideal para uso interno com 272 kg",
-  "Operação silenciosa, pneus não marcantes e zero emissão",
-  "Estrutura visual premium, segurança IPAF e atendimento direto no WhatsApp",
-];
-
-const specs = [
-  {
-    icon: BadgeCheck,
-    title: "Segurança IPAF",
-    text: "Plataformas preparadas para rotinas de trabalho em altura com foco em proteção e estabilidade.",
-  },
-  {
-    icon: BatteryCharging,
-    title: "Zero emissão",
-    text: "Modelos elétricos AC+ ideais para áreas internas, galpões, manutenção industrial e ambientes sensíveis.",
-  },
-  {
-    icon: Building2,
-    title: "Uso versátil",
-    text: "Perfeitas para indústria, obras, manutenção predial, instalações e operação em centros logísticos.",
-  },
-];
-
-const heroImages = [
-  "/images/IMG-20260224-WA0026.jpg",
-  "/images/IMG-20260219-WA0055.jpg",
-  "/images/IMG-20260223-WA0033.jpg",
-];
-
 export default function Page() {
   const router = useRouter();
   const [activeGalleryIndex, setActiveGalleryIndex] = useState<number | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [activeHeroImage, setActiveHeroImage] = useState(0);
 
   useEffect(() => {
     if (activeGalleryIndex === null) return;
@@ -159,14 +127,6 @@ export default function Page() {
     };
   }, []);
 
-  useEffect(() => {
-    const interval = window.setInterval(() => {
-      setActiveHeroImage((prev) => (prev + 1) % heroImages.length);
-    }, 3000);
-
-    return () => window.clearInterval(interval);
-  }, []);
-
   return (
     <main className="min-h-screen bg-zinc-950 text-white">
       <div className="fixed inset-x-0 top-0 z-[60] h-1 bg-white/5">
@@ -191,13 +151,13 @@ export default function Page() {
             </div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#f99c2c]">Terraar Brasil</p>
-              <p className="text-xs text-zinc-400">Aluguel de Plataformas Elevatórias Tesoura Elétricas</p>
+              <p className="text-xs text-zinc-400">Plataformas elevatórias e linha amarela para locação</p>
             </div>
           </Link>
 
           <nav className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
             <Link href="#frota" className="transition hover:text-[#f99c2c]">
-              Frota
+              Equipamentos
             </Link>
             <Link href="#diferenciais" className="transition hover:text-[#f99c2c]">
               Diferenciais
@@ -213,110 +173,109 @@ export default function Page() {
         </div>
       </header>
 
-      <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
+      <section id="top" className="relative overflow-hidden bg-[#ece8df] pt-24 text-zinc-950">
         <div className="absolute inset-0">
-          {heroImages.map((image, index) => (
-            <div
-              key={image}
-              className={`absolute inset-0 hero-zoom transition-opacity duration-[1600ms] ${
-                activeHeroImage === index ? "opacity-100" : "opacity-0"
-              }`}
-            >
-              <Image
-                src={image}
-                alt={`Plataforma elevatória Terraar ${index + 1}`}
-                fill
-                priority={index === 0}
-                sizes="100vw"
-                className="object-cover object-center"
-              />
-            </div>
-          ))}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,115,22,0.28),transparent_35%)]" />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/76 to-black/58" />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-black/46 to-zinc-950/46" />
-          <div className="absolute right-6 top-24 z-10 hidden gap-2 md:flex">
-            {heroImages.map((_, index) => (
-              <button
-                key={`hero-dot-${index}`}
-                type="button"
-                aria-label={`Ir para imagem ${index + 1}`}
-                onClick={() => setActiveHeroImage(index)}
-                className={`h-2.5 rounded-full transition-all ${
-                  activeHeroImage === index ? "w-10 bg-[#f99c2c]" : "w-2.5 bg-white/50"
-                }`}
-              />
-            ))}
-          </div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,156,44,0.18),transparent_30%)]" />
+          <div className="absolute inset-y-0 right-0 w-[58%] bg-[linear-gradient(135deg,rgba(255,255,255,0.6),rgba(255,255,255,0)_60%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,rgba(236,232,223,0),#ece8df)]" />
         </div>
 
-        <div className="relative mx-auto w-full max-w-7xl px-4 pt-28 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr]">
-          <div className="max-w-3xl">
-            <span className="inline-flex rounded-full border border-[rgba(249,156,44,0.3)] bg-[rgba(249,156,44,0.1)] px-4 py-2 text-xs font-medium uppercase tracking-[0.3em] text-[#f99c2c]">
-              Terraar Brasil
-            </span>
-            <h1 className="mt-6 text-5xl font-black uppercase leading-none tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Acesso seguro em altura
-              <span className="block text-[#f99c2c]">para sua obra e indústria</span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-300 sm:text-xl">
-              Plataformas elevatórias elétricas para trabalho em altura com segurança e agilidade.
-            </p>
+        <div className="relative mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+          <div className="grid min-h-[calc(100svh-6rem)] items-center gap-10 py-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14 lg:py-12">
+            <div className="order-2 max-w-xl lg:order-1">
+              <span className="inline-flex rounded-full border border-[rgba(249,156,44,0.28)] bg-white/80 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.32em] text-[#c96f00] shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
+                Plataformas elevatórias + linha amarela
+              </span>
+              <h1 className="mt-6 text-5xl font-black uppercase leading-[0.92] tracking-[-0.04em] text-zinc-950 sm:text-6xl lg:text-[5.3rem]">
+                Máquinas para
+                <span className="block text-[#f99c2c]">altura e obra pesada</span>
+              </h1>
+              <p className="mt-5 max-w-md text-base leading-7 text-zinc-700 sm:text-lg">
+                Locação com leitura imediata de nicho: plataformas elevatórias e estrutura pronta para destacar linha amarela.
+              </p>
 
-            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="#formulario"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f99c2c] px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#e08a21]"
-              >
-                Solicitar orçamento
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link
-                href="#frota"
-                className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:border-[rgba(249,156,44,0.6)] hover:bg-[rgba(249,156,44,0.1)]"
-              >
-                Ver frota
-              </Link>
+              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+                <Link
+                  href="#formulario"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#f99c2c]"
+                >
+                  Solicitar cotação
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+                <Link
+                  href="#frota"
+                  className="inline-flex items-center justify-center rounded-full border border-zinc-950/15 bg-white/70 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-zinc-950 transition hover:border-[#f99c2c] hover:bg-white"
+                >
+                  Ver equipamentos
+                </Link>
+              </div>
             </div>
 
-          </div>
+            <div className="order-1 lg:order-2">
+              <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
+                <article className="group relative min-h-[25rem] overflow-hidden rounded-[2.2rem] border border-black/10 bg-zinc-900 shadow-[0_30px_70px_rgba(0,0,0,0.18)] sm:min-h-[32rem]">
+                  <Image
+                    src="/images/IMG-20260224-WA0026.jpg"
+                    alt="Plataforma elevatória em destaque"
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 55vw"
+                    className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
+                  <div className="absolute left-5 top-5 rounded-full border border-white/20 bg-black/45 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.3em] text-white">
+                    Plataforma elevatória
+                  </div>
+                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
+                    <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#f99c2c]">Destaque principal</p>
+                    <h2 className="mt-3 max-w-md text-3xl font-black uppercase leading-tight text-white sm:text-4xl">
+                      Altura, alcance e presença visual forte logo na entrada.
+                    </h2>
+                  </div>
+                </article>
 
-          <div className="flex items-start lg:pt-[4.5rem]">
-            <div className="w-full rounded-[2rem] border border-[rgba(249,156,44,0.2)] bg-white/5 p-6 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-md">
-              <p className="text-sm uppercase tracking-[0.3em] text-[#f99c2c]">Terraar em campo</p>
-              <h2 className="mt-3 text-2xl font-bold text-white">
-                Equipamento certo, no momento certo, com presença de marca forte.
-              </h2>
-              <div className="mt-6 grid gap-4">
-                {specs.map(({ icon: Icon, title, text }) => (
-                  <div key={title} className="rounded-2xl border border-white/10 bg-zinc-900/70 p-4">
-                    <div className="flex items-center gap-3">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#f99c2c] text-white">
-                        <Icon className="h-5 w-5" />
+                <div className="grid gap-4">
+                  <article className="relative min-h-[15rem] overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-[0_24px_50px_rgba(0,0,0,0.12)]">
+                    <Image
+                      src="/images/IMG-20260223-WA0033.jpg"
+                      alt="Plataforma tesoura em operação"
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 28vw"
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-black/0 to-transparent" />
+                    <div className="absolute inset-x-0 bottom-0 p-5">
+                      <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#f99c2c]">Frota real</p>
+                      <p className="mt-2 text-xl font-bold text-white">Visual técnico, imediato e comercial.</p>
+                    </div>
+                  </article>
+
+                  <article className="relative min-h-[15rem] overflow-hidden rounded-[2rem] border border-dashed border-zinc-950/20 bg-[linear-gradient(135deg,#d7d2c9,#f5f2ec)] shadow-[0_24px_50px_rgba(0,0,0,0.08)]">
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,156,44,0.2),transparent_35%)]" />
+                    <div className="relative flex h-full flex-col justify-between p-6">
+                      <div className="inline-flex w-fit rounded-full border border-zinc-950/10 bg-white/75 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.28em] text-zinc-700">
+                        Placeholder visual
                       </div>
                       <div>
-                        <p className="font-semibold text-white">{title}</p>
-                        <p className="mt-1 text-sm text-zinc-300">{text}</p>
+                        <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#c96f00]">Linha amarela</p>
+                        <h3 className="mt-3 max-w-xs text-2xl font-black uppercase leading-tight text-zinc-950">
+                          Espaço pronto para foto de escavadeira ou retroescavadeira.
+                        </h3>
+                        <p className="mt-3 max-w-sm text-sm leading-6 text-zinc-700">
+                          A estrutura da capa já acomoda a segunda imagem principal sem roubar o protagonismo das máquinas.
+                        </p>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  </article>
+                </div>
               </div>
             </div>
           </div>
-          </div>
 
-          <div className="mt-10 grid gap-4 xl:grid-cols-4 md:grid-cols-2">
-            {highlights.map((item) => (
-              <div
-                key={item}
-                className="flex min-h-[100px] items-start gap-4 rounded-[1.75rem] border border-white/10 bg-black/42 px-6 py-4 backdrop-blur-md"
-              >
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#f99c2c]" />
-                <p className="text-base leading-8 text-zinc-100">{item}</p>
-              </div>
-            ))}
+          <div className="mt-4 grid gap-3 border-t border-zinc-950/10 pt-5 text-[11px] font-bold uppercase tracking-[0.28em] text-zinc-600 sm:grid-cols-3">
+            <div className="rounded-full bg-white/70 px-4 py-3 text-center">Plataformas elevatórias</div>
+            <div className="rounded-full bg-white/70 px-4 py-3 text-center">Linha amarela em destaque</div>
+            <div className="rounded-full bg-white/70 px-4 py-3 text-center">Locação para obra, indústria e manutenção</div>
           </div>
         </div>
       </section>
