@@ -35,7 +35,7 @@ const fleetCards = [
   {
     title: "Pá Carregadeira LiuGong 838T",
     badge: "alta presença",
-    description: "Maquina pronta para servicos de carga e movimentacao com mais produtividade na obra.",
+    description: "Máquina pronta para serviços de carga e movimentação, com mais produtividade na obra.",
     images: ["/images/frota-pesada/liugong-838t-pa-carregadeira-vista-lateral-frontal.jpeg"],
   },
   {
@@ -48,7 +48,7 @@ const fleetCards = [
   {
     title: "Escavadeira LiuGong 915E",
     badge: "potência em campo",
-    description: "Escavadeira pronta para frentes mais pesadas com forca e confianca na operacao.",
+    description: "Escavadeira pronta para frentes mais pesadas, com força e confiança na operação.",
     images: ["/images/frota-pesada/liugong-915e-vista-frontal-angulada.jpeg"],
   },
 ];
@@ -66,8 +66,8 @@ const reasons = [
   },
   {
     icon: ShieldCheck,
-    title: "Equipamentos padronizados que passam confiança desde o primeiro contato",
-    text: "Maquinas bem cuidadas para transmitir confianca e mais seguranca na sua contratacao.",
+    title: "Equipamentos padronizados que transmitem confiança desde o primeiro contato",
+    text: "Máquinas bem cuidadas para transmitir confiança e mais segurança na sua contratação.",
   },
 ];
 
@@ -102,7 +102,7 @@ const gallery = [
   },
   {
     image: "/images/frota-pesada/liugong-908e-vista-conjunto-caminhao-maquina.jpeg",
-    title: "Mini escavadeira entregue pronta para entrar em serviço",
+    title: "Mini Escavadeira entregue pronta para entrar em serviço",
     description: "Receba a máquina no local com mais rapidez e menos atraso na mobilização.",
     className: "md:col-span-2",
     icon: Truck,
@@ -252,18 +252,18 @@ export default function Page() {
                 className="hero-reveal mt-6 hidden text-xs font-bold uppercase tracking-[0.42em] text-zinc-500 sm:mt-8 sm:block sm:text-sm"
                 style={{ animationDelay: "90ms" }}
               >
-                Receba a maquina certa no seu canteiro com logistica propria e suporte em campo
+                Receba a máquina certa no seu canteiro, com logística própria e suporte em campo.
               </p>
 
               <h1
                 className="hero-reveal mt-5 font-[family:var(--font-headline)] text-[2.15rem] font-bold uppercase leading-[0.92] tracking-[-0.03em] text-zinc-950 sm:mt-3 sm:text-[3.3rem] lg:text-[4.05rem]"
                 style={{ animationDelay: "170ms" }}
               >
-                Maquinas pesadas
+                Máquinas pesadas
                 <span className="block">prontas para obra</span>
                 <span className="mt-3 block text-[0.62em] leading-[0.96] tracking-[-0.02em] text-[#f99c2c] sm:text-[0.58em]">
-                  com entrega rapida
-                  <span className="block">e zero atraso</span>
+                  com entrega rápida
+                  <span className="block">e zero atraso.</span>
                 </span>
               </h1>
 
@@ -271,7 +271,7 @@ export default function Page() {
                 className="hero-reveal mt-6 max-w-lg text-base leading-8 text-zinc-700 sm:text-lg"
                 style={{ animationDelay: "250ms" }}
               >
-                Equipamentos revisados prontos para entrar em operacao no mesmo dia.
+                Equipamentos revisados prontos para entrar em operação no mesmo dia.
               </p>
 
               <div className="hero-reveal mt-8 flex flex-col gap-4 sm:flex-row" style={{ animationDelay: "330ms" }}>
@@ -279,7 +279,7 @@ export default function Page() {
                   href="#galeria"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#f99c2c]"
                 >
-                  Ver maquinas disponiveis agora
+                  Ver máquinas disponíveis agora
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
@@ -287,7 +287,7 @@ export default function Page() {
                   target="_blank"
                   className="inline-flex items-center justify-center rounded-full border border-zinc-950/15 bg-white/75 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-zinc-950 transition hover:border-[#f99c2c] hover:bg-white"
                 >
-                  Receber orcamento rapido no WhatsApp
+                  Receber orçamento rápido no WhatsApp
                 </Link>
               </div>
             </div>
@@ -318,8 +318,8 @@ export default function Page() {
 
       <section className="section-shell">
         <div className="section-header">
-          <p className="section-kicker">Veja como funciona nossa operacao na pratica</p>
-          <h2 className="section-title">Veja como a Terraar atende sua obra do inicio ao fim</h2>
+          <p className="section-kicker">Veja como funciona nossa operação na prática</p>
+          <h2 className="section-title">Veja como a Terraar atende sua obra do início ao fim.</h2>
           <p className="section-copy">
             Entenda como entregamos, operamos e mantemos sua obra rodando sem atraso.
           </p>
@@ -343,10 +343,10 @@ export default function Page() {
 
       <section id="frota" className="section-shell">
         <div className="section-header">
-          <p className="section-kicker">Maquinas para sua obra</p>
-          <h2 className="section-title">Veja as maquinas em operacao real prontas para uso na sua obra</h2>
+          <p className="section-kicker">Máquinas para sua obra</p>
+          <h2 className="section-title">Veja as máquinas em operação real, prontas para uso na sua obra.</h2>
           <p className="section-copy">
-            Retroescavadeiras, escavadeiras, rolos e caminhoes disponiveis para locacao imediata.
+            Retroescavadeiras, Escavadeiras, Rolos e Caminhões disponíveis para locação imediata.
           </p>
         </div>
 
@@ -401,8 +401,8 @@ export default function Page() {
 
       <section id="galeria" className="section-shell">
         <div className="section-header">
-          <p className="section-kicker">Frota disponivel</p>
-          <h2 className="section-title">Veja as maquinas disponiveis prontas para entrar na sua obra</h2>
+          <p className="section-kicker">Frota disponível</p>
+          <h2 className="section-title">Veja as máquinas disponíveis, prontas para entrar na sua obra.</h2>
           <p className="section-copy">
             Equipamentos reais para atender sua necessidade com rapidez, suporte e entrega no canteiro.
           </p>
@@ -461,10 +461,10 @@ export default function Page() {
             <div className="max-w-4xl">
               <p className="text-sm font-bold uppercase tracking-[0.35em] text-zinc-950/80">Fale com a Terraar</p>
               <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl">
-                Fale agora no WhatsApp e receba a maquina ideal para sua obra
+                Fale agora no WhatsApp e receba a máquina ideal para sua obra.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-900/85 sm:text-lg">
-                Envie sua necessidade e receba indicacao rapida com disponibilidade e prazo de entrega.
+                Envie sua necessidade e receba indicação rápida, com disponibilidade e prazo de entrega.
               </p>
             </div>
 
@@ -496,7 +496,7 @@ export default function Page() {
                   className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#ffbb47]"
                 />
                 <textarea
-                  placeholder="Qual maquina voce precisa e para quando"
+                  placeholder="Qual máquina você precisa e para quando?"
                   rows={4}
                   className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#ffbb47]"
                 />
