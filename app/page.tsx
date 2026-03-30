@@ -23,33 +23,28 @@ const INSTITUTIONAL_VIDEO_EMBED = "https://www.youtube.com/embed/a3NtvovVe5w?rel
 
 const fleetCards = [
   {
-    title: "Retroescavadeira LiuGong 766A",
-    badge: "3 vistas",
-    description: "Equipamento bem conservado pronto para uso imediato.",
-    images: [
-      "/images/frota-pesada/liugong-766a-lateral-direita.jpeg",
-      "/images/frota-pesada/liugong-766a-lateral-esquerda.jpeg",
-      "/images/frota-pesada/liugong-766a-vista-traseira.jpeg",
-    ],
+    title: "Plataforma Tesoura Compacta",
+    badge: "S0807AC",
+    description: "Ideal para manutenção, instalações e operação em áreas internas com agilidade e segurança.",
+    images: ["/images/IMG-20260223-WA0033.jpg"],
   },
   {
-    title: "Pá Carregadeira LiuGong 838T",
-    badge: "alta presença",
-    description: "Máquina pronta para serviços de carga e movimentação, com mais produtividade na obra.",
-    images: ["/images/frota-pesada/liugong-838t-pa-carregadeira-vista-lateral-frontal.jpeg"],
+    title: "Plataforma Tesoura Alta Capacidade",
+    badge: "S1412AC+",
+    description: "Mais altura e capacidade de carga para equipes que precisam de produtividade com estabilidade.",
+    images: ["/images/IMG-20260224-WA0026.jpg"],
   },
   {
-    title: "Mini Escavadeira LiuGong 9035E",
-    badge: "compacta e precisa",
-    description:
-      "Imagem frontal com concha em destaque, ideal para mostrar versatilidade em frentes urbanas e obras técnicas.",
-    images: ["/images/frota-pesada/liugong-9035e-terraar-frontal-com-concha.jpeg"],
+    title: "Modelo Elétrico Zero Emissão",
+    badge: "AC+",
+    description: "Solução limpa para galpões, indústrias e centros logísticos que exigem operação silenciosa.",
+    images: ["/images/IMG-20260219-WA0055.jpg"],
   },
   {
-    title: "Escavadeira LiuGong 915E",
-    badge: "potência em campo",
-    description: "Escavadeira pronta para frentes mais pesadas, com força e confiança na operação.",
-    images: ["/images/frota-pesada/liugong-915e-vista-frontal-angulada.jpeg"],
+    title: "Plataformas com Certificação IPAF",
+    badge: "IPAF",
+    description: "Equipamentos preparados para operações que exigem padrão, segurança e confiança na contratação.",
+    images: ["/images/IMG-20260223-WA0052.jpg"],
   },
 ];
 
@@ -343,10 +338,10 @@ export default function Page() {
 
       <section id="frota" className="section-shell">
         <div className="section-header">
-          <p className="section-kicker">Máquinas para sua obra</p>
-          <h2 className="section-title">Veja as máquinas em operação real, prontas para uso na sua obra.</h2>
+          <p className="section-kicker">Plataformas elevatórias</p>
+          <h2 className="section-title">Veja as plataformas disponíveis para trabalho em altura na sua obra.</h2>
           <p className="section-copy">
-            Retroescavadeiras, escavadeiras, rolos e caminhões disponíveis para locação imediata.
+            Modelos compactos, elétricos e de alta capacidade para manutenção, instalação, indústria e operação logística.
           </p>
         </div>
 
@@ -434,7 +429,6 @@ export default function Page() {
                       <span className="text-[11px] font-bold uppercase tracking-[0.28em]">Terraar</span>
                     </div>
                     <h3 className="mt-3 text-xl font-black uppercase leading-tight text-white">{item.title}</h3>
-                    <p className="mt-2 max-w-md text-sm leading-6 text-zinc-300">{item.description}</p>
                   </div>
                 </div>
               </button>
