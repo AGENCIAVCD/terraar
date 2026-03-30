@@ -56,18 +56,18 @@ const fleetCards = [
 const reasons = [
   {
     icon: Truck,
-    title: "Entregamos a máquina direto no seu canteiro com agilidade",
+    title: "Entregamos a máquina diretamente no seu canteiro, com agilidade",
     text: "Caminhões equipados e operação preparada para mobilizar máquinas com rapidez e previsibilidade.",
   },
   {
     icon: Wrench,
     title: "Suporte e oficina móvel",
-    text: "Suporte em campo para resolver rápido e manter sua obra rodando.",
+    text: "Suporte em campo para resolução rápida de problemas e manter sua obra rodando.",
   },
   {
     icon: ShieldCheck,
     title: "Equipamentos padronizados que transmitem confiança desde o primeiro contato",
-    text: "Máquinas bem cuidadas para transmitir confiança e mais segurança na sua contratação.",
+    text: "Máquinas bem cuidadas para garantir mais segurança na sua contratação.",
   },
 ];
 
@@ -75,7 +75,7 @@ const gallery = [
   {
     image: "/images/frota-pesada/caminhao-comboio-vw-constellation-24280.jpeg",
     title: "Caminhão comboio para manter sua obra rodando",
-    description: "Suporte em campo para reduzir parada e manter o ritmo da sua operação.",
+    description: "Suporte em campo para reduzir paradas e manter o ritmo da sua operação.",
     className: "md:col-span-2 md:row-span-2",
     icon: Wrench,
   },
@@ -131,7 +131,7 @@ const gallery = [
   {
     image: "/images/frota-pesada/patio-maquinas-liugong-838t-bobcat-outras.jpeg",
     title: "Variedade de máquinas para atender diferentes etapas da obra",
-    description: "Mais opções para você encontrar a solução certa com rapidez e segurança.",
+    description: "Mais opções para encontrar a solução certa com rapidez e segurança.",
     className: "md:col-span-2",
     icon: Building2,
   },
@@ -252,7 +252,7 @@ export default function Page() {
                 className="hero-reveal mt-6 hidden text-xs font-bold uppercase tracking-[0.42em] text-zinc-500 sm:mt-8 sm:block sm:text-sm"
                 style={{ animationDelay: "90ms" }}
               >
-                Receba a máquina certa no seu canteiro, com logística própria e suporte em campo.
+                Receba a máquina certa no seu canteiro, com logística própria e suporte técnico em campo.
               </p>
 
               <h1
@@ -346,7 +346,7 @@ export default function Page() {
           <p className="section-kicker">Máquinas para sua obra</p>
           <h2 className="section-title">Veja as máquinas em operação real, prontas para uso na sua obra.</h2>
           <p className="section-copy">
-            Retroescavadeiras, Escavadeiras, Rolos e Caminhões disponíveis para locação imediata.
+            Retroescavadeiras, escavadeiras, rolos e caminhões disponíveis para locação imediata.
           </p>
         </div>
 
@@ -382,7 +382,7 @@ export default function Page() {
         <div className="rounded-[2rem] border border-[rgba(255,187,71,0.2)] bg-gradient-to-br from-[#121212] via-[#090909] to-[#151515] p-8 sm:p-10">
           <div className="section-header !max-w-3xl !px-0 !pb-0">
             <p className="section-kicker">Por que escolher a Terraar para sua obra</p>
-            <h2 className="section-title">Estrutura pronta para atender obras exigentes com rapidez</h2>
+            <h2 className="section-title">Estrutura pronta para atender obras exigentes com rapidez e eficiência.</h2>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
