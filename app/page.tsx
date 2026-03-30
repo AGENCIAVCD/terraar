@@ -25,8 +25,7 @@ const fleetCards = [
   {
     title: "Retroescavadeira LiuGong 766A",
     badge: "3 vistas",
-    description:
-      "Apresentação completa com lateral direita, esquerda e traseira para transmitir robustez, conservação e confiança de locação.",
+    description: "Equipamento bem conservado pronto para uso imediato.",
     images: [
       "/images/frota-pesada/liugong-766a-lateral-direita.jpeg",
       "/images/frota-pesada/liugong-766a-lateral-esquerda.jpeg",
@@ -36,8 +35,7 @@ const fleetCards = [
   {
     title: "Pá Carregadeira LiuGong 838T",
     badge: "alta presença",
-    description:
-      "Enquadramento lateral frontal com leitura forte de porte, pneus e concha para abrir a seção com impacto visual.",
+    description: "Maquina pronta para servicos de carga e movimentacao com mais produtividade na obra.",
     images: ["/images/frota-pesada/liugong-838t-pa-carregadeira-vista-lateral-frontal.jpeg"],
   },
   {
@@ -50,8 +48,7 @@ const fleetCards = [
   {
     title: "Escavadeira LiuGong 915E",
     badge: "potência em campo",
-    description:
-      "Vista frontal angulada que reforça presença, braço, lança e o perfil premium da frota pesada Terraar.",
+    description: "Escavadeira pronta para frentes mais pesadas com forca e confianca na operacao.",
     images: ["/images/frota-pesada/liugong-915e-vista-frontal-angulada.jpeg"],
   },
 ];
@@ -59,82 +56,82 @@ const fleetCards = [
 const reasons = [
   {
     icon: Truck,
-    title: "Logística própria de entrega",
+    title: "Entregamos a máquina direto no seu canteiro com agilidade",
     text: "Caminhões equipados e operação preparada para mobilizar máquinas com rapidez e previsibilidade.",
   },
   {
     icon: Wrench,
     title: "Suporte e oficina móvel",
-    text: "Estrutura em campo para reforçar confiança, disponibilidade e resposta quando a obra não pode parar.",
+    text: "Suporte em campo para resolver rápido e manter sua obra rodando.",
   },
   {
     icon: ShieldCheck,
-    title: "Imagem profissional para grandes obras",
-    text: "Frota padronizada, comunicação forte e apresentação visual que transmite solidez desde o primeiro contato.",
+    title: "Equipamentos padronizados que passam confiança desde o primeiro contato",
+    text: "Maquinas bem cuidadas para transmitir confianca e mais seguranca na sua contratacao.",
   },
 ];
 
 const gallery = [
   {
     image: "/images/frota-pesada/caminhao-comboio-vw-constellation-24280.jpeg",
-    title: "Caminhão Comboio + Oficina Móvel",
-    description: "Suporte e manutenção em campo para operações que exigem autonomia e resposta rápida.",
+    title: "Caminhão comboio para manter sua obra rodando",
+    description: "Suporte em campo para reduzir parada e manter o ritmo da sua operação.",
     className: "md:col-span-2 md:row-span-2",
     icon: Wrench,
   },
   {
     image: "/images/frota-pesada/caminhao-tanque-patio-maquinas-terraar.jpeg",
-    title: "Caminhão Tanque e Estrutura Terraar",
-    description: "Infraestrutura própria para atendimento contínuo e imagem institucional mais forte.",
+    title: "Estrutura própria para atender sua obra com agilidade",
+    description: "Frota e apoio preparados para entregar a máquina certa sem complicação.",
     className: "md:row-span-2",
     icon: Building2,
   },
   {
     image: "/images/frota-pesada/liugong-764-retroescavadeira-frontal.jpeg",
     title: "LiuGong 764 - Retroescavadeira",
-    description: "Frontal marcante com concha em destaque para leitura imediata de potência.",
+    description: "Ideal para serviços de escavação, carga e apoio com rapidez no canteiro.",
     className: "",
     icon: Drill,
   },
   {
     image: "/images/frota-pesada/liugong-838t-pa-carregadeira-vista-lateral-frontal.jpeg",
     title: "Pá Carregadeira LiuGong 838T",
-    description: "Composição limpa e robusta, ótima para hero secundário ou card de destaque.",
+    description: "Máquina pronta para carregar, movimentar material e ganhar produtividade na obra.",
     className: "",
     icon: Drill,
   },
   {
     image: "/images/frota-pesada/liugong-908e-vista-conjunto-caminhao-maquina.jpeg",
-    title: "LiuGong 908E no Caminhão",
-    description: "Mostra capacidade logística e equipamento pronto para entrar em operação.",
+    title: "Mini escavadeira entregue pronta para entrar em serviço",
+    description: "Receba a máquina no local com mais rapidez e menos atraso na mobilização.",
     className: "md:col-span-2",
     icon: Truck,
   },
   {
     image: "/images/frota-pesada/liugong-915e-vista-frontal-angulada.jpeg",
     title: "LiuGong 915E - Escavadeira",
-    description: "Vista angulada de alto impacto para reforçar força e presença de obra pesada.",
+    description: "Potência para frentes mais exigentes com confiança e desempenho no dia a dia.",
     className: "",
     icon: Drill,
   },
   {
     image: "/images/frota-pesada/liugong-6112e-rolo-compactador-vista-traseira.jpeg",
     title: "Rolo Compactador LiuGong 6112E",
-    description: "Foto vertical com identidade industrial e leitura clara do equipamento.",
+    description: "Compactação eficiente para manter o avanço da obra com mais produtividade.",
     className: "",
     icon: Drill,
   },
   {
     image: "/images/frota-pesada/liugong-9035e-terraar-frontal-com-concha.jpeg",
     title: "LiuGong 9035E - Mini Escavadeira",
-    description: "Equipamento compacto com linguagem visual premium para obras urbanas e precisão.",
+    description: "Compacta, prática e pronta para obras urbanas e serviços com pouco espaço.",
     className: "",
     icon: Drill,
   },
   {
     image: "/images/frota-pesada/patio-maquinas-liugong-838t-bobcat-outras.jpeg",
-    title: "Pátio de Máquinas Terraar",
-    description: "Mix de equipamentos para comunicar escala, variedade e capacidade de atendimento.",
+    title: "Variedade de máquinas para atender diferentes etapas da obra",
+    description: "Mais opções para você encontrar a solução certa com rapidez e segurança.",
     className: "md:col-span-2",
     icon: Building2,
   },
@@ -255,38 +252,39 @@ export default function Page() {
                 className="hero-reveal mt-6 hidden text-xs font-bold uppercase tracking-[0.42em] text-zinc-500 sm:mt-8 sm:block sm:text-sm"
                 style={{ animationDelay: "90ms" }}
               >
-                Terraar Brasil
+                Receba a maquina certa no seu canteiro com logistica propria e suporte em campo
               </p>
 
               <h1
                 className="hero-reveal mt-5 font-[family:var(--font-headline)] text-[3.05rem] font-bold uppercase leading-[0.88] tracking-[-0.03em] text-zinc-950 sm:mt-3 sm:text-[4.7rem] lg:text-[5.8rem]"
                 style={{ animationDelay: "170ms" }}
               >
-                Plataformas
-                <span className="block">para trabalho</span>
-                <span className="block text-[#f99c2c]">em altura.</span>
+                Maquinas pesadas
+                <span className="block">prontas para obra</span>
+                <span className="block text-[#f99c2c]">com entrega rapida e zero atraso</span>
               </h1>
 
               <p
                 className="hero-reveal mt-6 max-w-lg text-base leading-8 text-zinc-700 sm:text-lg"
                 style={{ animationDelay: "250ms" }}
               >
-                Locação de plataformas elevatórias para obra, indústria e manutenção, com resposta rápida e frota pronta para entrar no canteiro.
+                Equipamentos revisados prontos para entrar em operacao no mesmo dia.
               </p>
 
               <div className="hero-reveal mt-8 flex flex-col gap-4 sm:flex-row" style={{ animationDelay: "330ms" }}>
                 <Link
-                  href="#formulario"
+                  href="#galeria"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#f99c2c]"
                 >
-                  Solicitar cotação
+                  Ver maquinas disponiveis agora
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="#frota"
+                  href={WHATSAPP_URL}
+                  target="_blank"
                   className="inline-flex items-center justify-center rounded-full border border-zinc-950/15 bg-white/75 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-zinc-950 transition hover:border-[#f99c2c] hover:bg-white"
                 >
-                  Ver equipamentos
+                  Receber orcamento rapido no WhatsApp
                 </Link>
               </div>
             </div>
@@ -317,10 +315,10 @@ export default function Page() {
 
       <section className="section-shell">
         <div className="section-header">
-          <p className="section-kicker">Apresentação institucional</p>
-          <h2 className="section-title">Veja a estrutura da Terraar em uma apresentação direta e confiável</h2>
+          <p className="section-kicker">Veja como funciona nossa operacao na pratica</p>
+          <h2 className="section-title">Veja como a Terraar atende sua obra do inicio ao fim</h2>
           <p className="section-copy">
-            Um resumo da operação, da frota e da capacidade de mobilização para reforçar a decisão de contratação com uma leitura mais premium da marca.
+            Entenda como entregamos, operamos e mantemos sua obra rodando sem atraso.
           </p>
         </div>
 
@@ -342,10 +340,10 @@ export default function Page() {
 
       <section id="frota" className="section-shell">
         <div className="section-header">
-          <p className="section-kicker">Curadoria visual</p>
-          <h2 className="section-title">Cards pensados para mostrar potência, variedade e confiança</h2>
+          <p className="section-kicker">Maquinas para sua obra</p>
+          <h2 className="section-title">Veja as maquinas em operacao real prontas para uso na sua obra</h2>
           <p className="section-copy">
-            A seção combina hero visual, vistas múltiplas e enquadramentos de apoio para dar leitura rápida da frota pesada em desktop e mobile.
+            Retroescavadeiras, escavadeiras, rolos e caminhoes disponiveis para locacao imediata.
           </p>
         </div>
 
@@ -380,8 +378,8 @@ export default function Page() {
       <section id="diferenciais" className="section-shell">
         <div className="rounded-[2rem] border border-[rgba(255,187,71,0.2)] bg-gradient-to-br from-[#121212] via-[#090909] to-[#151515] p-8 sm:p-10">
           <div className="section-header !max-w-3xl !px-0 !pb-0">
-            <p className="section-kicker">Por que a seção transmite mais valor</p>
-            <h2 className="section-title">Uma linguagem visual mais industrial, sólida e pronta para grandes clientes</h2>
+            <p className="section-kicker">Por que escolher a Terraar para sua obra</p>
+            <h2 className="section-title">Estrutura pronta para atender obras exigentes com rapidez</h2>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -400,10 +398,10 @@ export default function Page() {
 
       <section id="galeria" className="section-shell">
         <div className="section-header">
-          <p className="section-kicker">Frota Pesada Terraar</p>
-          <h2 className="section-title">Grid impactante com máquinas em contexto real de operação e mobilização</h2>
+          <p className="section-kicker">Frota disponivel</p>
+          <h2 className="section-title">Veja as maquinas disponiveis prontas para entrar na sua obra</h2>
           <p className="section-copy">
-            Layout responsivo em 4 colunas no desktop e 2 no mobile, com overlay escuro, títulos fortes e hover suave para elevar a percepção da marca.
+            Equipamentos reais para atender sua necessidade com rapidez, suporte e entrega no canteiro.
           </p>
         </div>
 
@@ -460,10 +458,10 @@ export default function Page() {
             <div className="max-w-4xl">
               <p className="text-sm font-bold uppercase tracking-[0.35em] text-zinc-950/80">Fale com a Terraar</p>
               <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl">
-                Receba uma proposta rápida para a máquina certa.
+                Fale agora no WhatsApp e receba a maquina ideal para sua obra
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-900/85 sm:text-lg">
-                Informe sua necessidade e nossa equipe retorna com disponibilidade, indicação técnica e mobilização alinhada ao seu canteiro.
+                Envie sua necessidade e receba indicacao rapida com disponibilidade e prazo de entrega.
               </p>
             </div>
 
@@ -495,7 +493,7 @@ export default function Page() {
                   className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#ffbb47]"
                 />
                 <textarea
-                  placeholder="Conte rapidamente sua necessidade"
+                  placeholder="Qual maquina voce precisa e para quando"
                   rows={4}
                   className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#ffbb47]"
                 />
