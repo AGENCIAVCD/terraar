@@ -256,12 +256,12 @@ export default function Page() {
               </p>
 
               <h1
-                className="hero-reveal mt-5 font-[family:var(--font-headline)] text-[3.05rem] font-bold uppercase leading-[0.88] tracking-[-0.03em] text-zinc-950 sm:mt-3 sm:text-[4.7rem] lg:text-[5.8rem]"
+                className="hero-reveal mt-5 font-[family:var(--font-headline)] text-[2.15rem] font-bold uppercase leading-[0.92] tracking-[-0.03em] text-zinc-950 sm:mt-3 sm:text-[3.3rem] lg:text-[4.05rem]"
                 style={{ animationDelay: "170ms" }}
               >
                 Maquinas pesadas
                 <span className="block">prontas para obra</span>
-                <span className="mt-4 block text-[0.62em] leading-[0.92] tracking-[-0.02em] text-[#f99c2c] sm:text-[0.58em]">
+                <span className="mt-3 block text-[0.62em] leading-[0.96] tracking-[-0.02em] text-[#f99c2c] sm:text-[0.58em]">
                   com entrega rapida
                   <span className="block">e zero atraso</span>
                 </span>

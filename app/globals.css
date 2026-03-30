@@ -80,7 +80,7 @@ body {
   }
 
   .section-title {
-    @apply mt-4 text-4xl font-black leading-tight text-white sm:text-5xl;
+    @apply mt-4 text-[2.05rem] font-black leading-tight text-white sm:text-[3.1rem];
   }
 
   .section-copy {
