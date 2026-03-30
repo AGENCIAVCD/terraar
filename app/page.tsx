@@ -261,7 +261,10 @@ export default function Page() {
               >
                 Maquinas pesadas
                 <span className="block">prontas para obra</span>
-                <span className="block text-[#f99c2c]">com entrega rapida e zero atraso</span>
+                <span className="mt-4 block text-[0.62em] leading-[0.92] tracking-[-0.02em] text-[#f99c2c] sm:text-[0.58em]">
+                  com entrega rapida
+                  <span className="block">e zero atraso</span>
+                </span>
               </h1>
 
               <p
