@@ -99,10 +99,10 @@ export default function CalculadoraPlataformas() {
 
   return (
     <section className="section-shell">
-      <div className="rounded-[2rem] border border-[rgba(249,156,44,0.2)] bg-gradient-to-br from-zinc-100 via-white to-[rgba(249,156,44,0.12)] p-6 text-zinc-900 shadow-[0_20px_80px_rgba(0,0,0,0.14)] sm:p-10">
+      <div className="rounded-[2rem] border border-black/5 bg-white p-6 text-zinc-900 shadow-[0_24px_60px_rgba(0,0,0,0.08)] sm:p-10">
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-4xl font-bold text-center">Calculadora de Plataforma Elevatória</h2>
-          <p className="mt-3 text-center text-gray-600">Encontre o equipamento ideal em segundos</p>
+          <h2 className="text-center text-4xl font-bold">Escolha o equipamento certo para sua operação</h2>
+          <p className="mt-3 text-center text-gray-600">Filtre altura, alcance e carga para acelerar a cotação com o modelo mais adequado.</p>
         </div>
 
         <div className="mx-auto mt-10 flex max-w-2xl rounded-2xl bg-white p-2 shadow-lg ring-1 ring-black/5">
@@ -196,7 +196,7 @@ export default function CalculadoraPlataformas() {
 
               {mostrarAvisoCargaTesoura ? (
                 <div className="mt-4 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm font-medium text-amber-800">
-                  Para suportar essa carga, seria interessante contratar a plataforma articulada ou telescópica.
+                  Para essa carga, a recomendação é avaliar uma plataforma articulada ou telescópica.
                 </div>
               ) : null}
             </div>
@@ -206,7 +206,7 @@ export default function CalculadoraPlataformas() {
               onClick={() => setMostrarResultados(true)}
               className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-[#f99c2c] px-6 py-4 text-base font-bold text-white shadow-lg transition hover:bg-[#e08a21]"
             >
-              Ver Modelos Recomendados
+              Ver equipamentos recomendados
               <ArrowRight className="h-5 w-5" />
             </button>
           </div>
@@ -216,7 +216,7 @@ export default function CalculadoraPlataformas() {
           <div className="mt-12">
             <div className="mb-6 flex items-center gap-3">
               <BadgeCheck className="h-6 w-6 text-[#f99c2c]" />
-              <h3 className="text-2xl font-bold text-gray-900">Modelos recomendados para sua necessidade</h3>
+              <h3 className="text-2xl font-bold text-gray-900">Equipamentos indicados para sua demanda</h3>
             </div>
 
             {resultados.length > 0 ? (
@@ -247,7 +247,7 @@ export default function CalculadoraPlataformas() {
                     </div>
 
                     <div className="mt-5 rounded-2xl bg-[rgba(249,156,44,0.12)] px-4 py-3 text-sm font-medium text-[#b96e10]">
-                      Disponível em Elétrico, Diesel ou Híbrido
+                      Consulte disponibilidade e configuração mais adequada para sua operação
                     </div>
 
                     <a
@@ -256,7 +256,7 @@ export default function CalculadoraPlataformas() {
                       rel="noreferrer"
                       className="mt-6 inline-flex w-full items-center justify-center rounded-2xl bg-green-600 px-5 py-4 text-center text-sm font-bold text-white transition hover:bg-green-700"
                     >
-                      Solicitar Orçamento no WhatsApp
+                      Solicitar proposta no WhatsApp
                     </a>
                   </article>
                 ))}
@@ -275,20 +275,22 @@ export default function CalculadoraPlataformas() {
         ) : null}
 
         <div className="mt-20 space-y-12">
-          <div className="overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-black/5">
+          <div className="overflow-hidden rounded-3xl border border-black/5 bg-[#fcfcfb] shadow-[0_16px_40px_rgba(0,0,0,0.06)]">
             <button
               type="button"
               onClick={() => setTesourasExpandidas((prev) => !prev)}
-              className="flex w-full items-center justify-between bg-[#f99c2c] px-6 py-5 text-left text-white transition hover:bg-[#ee9427]"
+              className="flex w-full items-center justify-between border-l-4 border-[#f99c2c] bg-white px-6 py-5 text-left text-zinc-900 transition hover:bg-[rgba(249,156,44,0.04)]"
               aria-expanded={tesourasExpandidas}
             >
               <div>
-                <h3 className="text-2xl font-bold">PLATAFORMAS ELEVATÓRIAS TESOURAS</h3>
-                <p className="mt-1 text-sm text-white/85">
+                <h3 className="text-2xl font-black tracking-[-0.02em] text-zinc-950">PLATAFORMAS ELEVATÓRIAS TESOURAS</h3>
+                <p className="mt-1 text-sm text-zinc-500">
                   {tesourasExpandidas ? "Clique para recolher a tabela" : "Clique para visualizar a tabela"}
                 </p>
               </div>
-              <ChevronDown className={`h-6 w-6 transition-transform duration-300 ${tesourasExpandidas ? "rotate-180" : ""}`} />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[rgba(249,156,44,0.12)] text-[#f99c2c]">
+                <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${tesourasExpandidas ? "rotate-180" : ""}`} />
+              </div>
             </button>
 
             {tesourasExpandidas ? (
@@ -331,20 +333,22 @@ export default function CalculadoraPlataformas() {
             ) : null}
           </div>
 
-          <div className="overflow-hidden rounded-3xl bg-white shadow-xl ring-1 ring-black/5">
+          <div className="overflow-hidden rounded-3xl border border-black/5 bg-[#fcfcfb] shadow-[0_16px_40px_rgba(0,0,0,0.06)]">
             <button
               type="button"
               onClick={() => setArticuladasExpandidas((prev) => !prev)}
-              className="flex w-full items-center justify-between bg-[#f99c2c] px-6 py-5 text-left text-white transition hover:bg-[#ee9427]"
+              className="flex w-full items-center justify-between border-l-4 border-[#f99c2c] bg-white px-6 py-5 text-left text-zinc-900 transition hover:bg-[rgba(249,156,44,0.04)]"
               aria-expanded={articuladasExpandidas}
             >
               <div>
-                <h3 className="text-2xl font-bold">PLATAFORMAS ELEVATÓRIAS ARTICULADAS</h3>
-                <p className="mt-1 text-sm text-white/85">
+                <h3 className="text-2xl font-black tracking-[-0.02em] text-zinc-950">PLATAFORMAS ELEVATÓRIAS ARTICULADAS</h3>
+                <p className="mt-1 text-sm text-zinc-500">
                   {articuladasExpandidas ? "Clique para recolher a tabela" : "Clique para visualizar a tabela"}
                 </p>
               </div>
-              <ChevronDown className={`h-6 w-6 transition-transform duration-300 ${articuladasExpandidas ? "rotate-180" : ""}`} />
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[rgba(249,156,44,0.12)] text-[#f99c2c]">
+                <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${articuladasExpandidas ? "rotate-180" : ""}`} />
+              </div>
             </button>
 
             {articuladasExpandidas ? (

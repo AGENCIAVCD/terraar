@@ -15,25 +15,25 @@ const fleet = [
   {
     title: "Plataformas Tesoura Compactas",
     model: "S0807AC",
-    description: "Compacta, elétrica e silenciosa para espaços apertados, áreas internas e manutenção predial com 272 kg de capacidade.",
+    description: "Indicadas para manutenção, instalações e operação em áreas internas com agilidade, segurança e baixo impacto no ambiente.",
     image: "/images/IMG-20260223-WA0033.jpg",
   },
   {
     title: "Plataformas Tesoura Alta Capacidade",
     model: "S1412AC+",
-    description: "Alto desempenho para trabalho em altura com até 13,8 m e capacidade de 408 kg para operações mais exigentes.",
+    description: "Mais altura e capacidade de carga para equipes que precisam ganhar produtividade sem abrir mão de estabilidade operacional.",
     image: "/images/IMG-20260224-WA0026.jpg",
   },
   {
     title: "Modelos Elétricos Zero Emissão",
     model: "AC+",
-    description: "Operação limpa, pneus não marcantes e excelente autonomia para ambientes industriais, galpões e centros logísticos.",
+    description: "Solução limpa para galpões, indústrias e centros logísticos que exigem operação silenciosa e pneus não marcantes.",
     image: "/images/IMG-20260219-WA0055.jpg",
   },
   {
     title: "Plataformas com Certificação IPAF",
     model: "IPAF",
-    description: "Segurança, padronização operacional e confiança extra para equipes que precisam trabalhar em altura com responsabilidade.",
+    description: "Equipamentos preparados para operações que cobram padrão, segurança e confiança na contratação.",
     image: "/images/IMG-20260223-WA0052.jpg",
   },
 ];
@@ -41,26 +41,26 @@ const fleet = [
 const gallery = [
   {
     image: "/images/20260218_194143.jpg",
-    title: "Operação em altura",
-    description: "Plataforma em uso para mostrar alcance, estabilidade e presença visual forte.",
+    title: "Atendimento em campo",
+    description: "Operação real para comprovar alcance, estabilidade e aplicação prática no canteiro.",
     className: "md:col-span-2 md:row-span-2",
   },
   {
     image: "/images/IMG-20260219-WA0054.jpg",
-    title: "S1412AC+",
-    description: "Alta capacidade com visual robusto e foco em segurança.",
+    title: "Alta capacidade",
+    description: "Equipamento pronto para frentes que exigem produtividade e segurança na mesma locação.",
     className: "",
   },
   {
     image: "/images/IMG-20260224-WA0024.jpg",
-    title: "Linha compacta",
-    description: "Estrutura elétrica e pronta para operação em canteiros e galpões.",
+    title: "Operação em ambientes internos",
+    description: "Modelos elétricos para manutenção, instalação e rotina industrial com mobilidade e precisão.",
     className: "",
   },
   {
     image: "/images/IMG-20260212-WA0061.jpg",
-    title: "Frota real",
-    description: "Equipamentos reais para reforçar confiança comercial na apresentação.",
+    title: "Frota disponível",
+    description: "Equipamentos reais para transmitir disponibilidade, estrutura e capacidade de atendimento.",
     className: "md:col-span-2",
   },
 ];
@@ -68,18 +68,18 @@ const gallery = [
 const reasons = [
   {
     icon: Clock3,
-    title: "Agilidade de atendimento",
-    text: "Resposta rápida para locação, entrega e entrada em operação de plataformas tesoura elétricas em Jundiaí e região.",
+    title: "Resposta comercial rápida",
+    text: "Atendimento ágil para orçamento, definição do modelo e mobilização da máquina conforme a urgência da sua operação.",
   },
   {
     icon: ShieldCheck,
-    title: "Equipamentos confiáveis",
-    text: "Plataformas com foco em segurança em altura, certificação IPAF, operação estável e trabalho limpo com zero emissão.",
+    title: "Segurança para contratar",
+    text: "Equipamentos voltados para trabalho em altura com foco em estabilidade, padronização operacional e confiança na execução.",
   },
   {
     icon: Truck,
-    title: "Entrega no canteiro",
-    text: "Logística planejada para indústria, manutenção, construção civil e armazéns com mobilização rápida no local da operação.",
+    title: "Entrega e suporte operacional",
+    text: "Logística preparada para obra, indústria, manutenção e armazéns, reduzindo atraso e risco de parada no serviço.",
   },
 ];
 
@@ -136,26 +136,22 @@ export default function Page() {
         />
       </div>
 
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-zinc-950/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-          <Link href="#top" className="flex items-center gap-3">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full border border-[rgba(249,156,44,0.4)] bg-zinc-900 shadow-[0_0_30px_rgba(249,156,44,0.25)]">
-              <Image
-                src="https://instagram.fcgh51-1.fna.fbcdn.net/v/t51.82787-19/561175354_17872139979440356_8157841243592877380_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=instagram.fcgh51-1.fna.fbcdn.net&_nc_cat=104&_nc_oc=Q6cZ2gEjpSGKTQSHSTsL11zxWcOdXR2a7SP0qjHP-oN4WhccbLMmdl6UdkWlYi0SDnxiIuwrnbUTkepBvHeu8v-A2Yt7&_nc_ohc=CHmoXZKy8CkQ7kNvwFUJMvg&_nc_gid=yUywZmOhPOPpy4ou785bzw&edm=APoiHPcBAAAA&ccb=7-5&oh=00_AfwyPsX_Bhcmnxn5wabyY6Bp5KVSqQcR4TOls_0hAQV7hw&oe=69C327BF&_nc_sid=22de04"
-                alt="Logo Terraar Brasil"
-                fill
-                sizes="48px"
-                className="object-cover"
-                priority
-              />
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[rgba(244,239,231,0.82)] text-zinc-950 backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+          <Link href="#top" className="flex min-w-0 items-center gap-3">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full border border-[rgba(249,156,44,0.32)] bg-white shadow-[0_12px_32px_rgba(249,156,44,0.18)]">
+              <Image src="/images/terraar-logo.jpg" alt="Logo Terraar Brasil" fill sizes="48px" className="object-cover" priority />
             </div>
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[#f99c2c]">Terraar Brasil</p>
-              <p className="text-xs text-zinc-400">Plataformas elevatórias e linha amarela para locação</p>
+            <div className="min-w-0">
+              <p className="truncate font-[family:var(--font-headline)] text-lg font-bold uppercase tracking-[0.16em] text-[#d47a12] sm:text-2xl sm:tracking-[0.24em]">
+                <span className="sm:hidden">Terraar</span>
+                <span className="hidden sm:inline">Terraar Brasil</span>
+              </p>
+              <p className="hidden text-xs text-zinc-600 sm:block">Locação de plataformas elevatórias para obra, indústria e manutenção</p>
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-8 text-sm text-zinc-300 md:flex">
+          <nav className="hidden items-center gap-8 text-sm font-semibold text-zinc-700 md:flex">
             <Link href="#frota" className="transition hover:text-[#f99c2c]">
               Equipamentos
             </Link>
@@ -167,34 +163,61 @@ export default function Page() {
             </Link>
           </nav>
 
-          <Link href={WHATSAPP_URL} target="_blank" className="rounded-full bg-[#f99c2c] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#e08a21]">
+          <Link
+            href={WHATSAPP_URL}
+            target="_blank"
+            className="inline-flex items-center justify-center rounded-full bg-[#f99c2c] px-5 py-3 text-sm font-bold text-white shadow-[0_16px_32px_rgba(249,156,44,0.28)] transition hover:bg-[#e08a21]"
+          >
             WhatsApp
           </Link>
         </div>
       </header>
 
-      <section id="top" className="relative overflow-hidden bg-[#ece8df] pt-24 text-zinc-950">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,156,44,0.18),transparent_30%)]" />
-          <div className="absolute inset-y-0 right-0 w-[58%] bg-[linear-gradient(135deg,rgba(255,255,255,0.6),rgba(255,255,255,0)_60%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-[linear-gradient(180deg,rgba(236,232,223,0),#ece8df)]" />
+      <section id="top" className="relative isolate overflow-hidden bg-[var(--hero-surface)] pt-[5.25rem] text-zinc-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,156,44,0.22),transparent_28%),linear-gradient(118deg,#f7f3ec_0%,#f4f0e9_44%,#ece6dd_100%)]" />
+        <div className="absolute inset-y-0 right-0 hidden w-[60%] lg:block">
+          <div className="hero-grid h-full w-full" />
         </div>
+        <div className="absolute left-[-8rem] top-[18%] h-52 w-52 rounded-full bg-[#f99c2c]/12 blur-3xl sm:h-72 sm:w-72" />
+        <div className="pointer-events-none absolute bottom-[-1rem] right-[-8rem] h-[18rem] w-[30rem] opacity-[0.18] sm:right-[-4rem] sm:opacity-[0.24] lg:hidden">
+          <Image src="/images/boom-lift-hero.png" alt="" fill sizes="100vw" className="object-contain object-right" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-[linear-gradient(180deg,rgba(244,239,231,0),var(--hero-surface))]" />
 
-        <div className="relative mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
-          <div className="grid min-h-[calc(100svh-6rem)] items-center gap-10 py-8 lg:grid-cols-[0.72fr_1.28fr] lg:gap-14 lg:py-12">
-            <div className="order-2 max-w-xl lg:order-1">
-              <span className="inline-flex rounded-full border border-[rgba(249,156,44,0.28)] bg-white/80 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.32em] text-[#c96f00] shadow-[0_10px_30px_rgba(0,0,0,0.06)]">
-                Plataformas elevatórias + linha amarela
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 py-10 lg:min-h-[calc(100svh-5.25rem)] lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-center lg:gap-4 lg:py-0">
+            <div className="relative z-10 max-w-xl">
+              <span
+                className="hero-reveal inline-flex rounded-full border border-[rgba(249,156,44,0.22)] bg-white/85 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.34em] text-[#c96f00] shadow-[0_12px_34px_rgba(0,0,0,0.06)]"
+                style={{ animationDelay: "0ms" }}
+              >
+                Plataformas elevatórias para locação
               </span>
-              <h1 className="mt-6 text-5xl font-black uppercase leading-[0.92] tracking-[-0.04em] text-zinc-950 sm:text-6xl lg:text-[5.3rem]">
-                Máquinas para
-                <span className="block text-[#f99c2c]">altura e obra pesada</span>
-              </h1>
-              <p className="mt-5 max-w-md text-base leading-7 text-zinc-700 sm:text-lg">
-                Locação com leitura imediata de nicho: plataformas elevatórias e estrutura pronta para destacar linha amarela.
+
+              <p
+                className="hero-reveal mt-6 hidden text-xs font-bold uppercase tracking-[0.42em] text-zinc-500 sm:mt-8 sm:block sm:text-sm"
+                style={{ animationDelay: "90ms" }}
+              >
+                Terraar Brasil
               </p>
 
-              <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <h1
+                className="hero-reveal mt-5 font-[family:var(--font-headline)] text-[3.05rem] font-bold uppercase leading-[0.88] tracking-[-0.03em] text-zinc-950 sm:mt-3 sm:text-[4.7rem] lg:text-[5.8rem]"
+                style={{ animationDelay: "170ms" }}
+              >
+                Plataformas
+                <span className="block">para trabalho</span>
+                <span className="block text-[#f99c2c]">em altura.</span>
+              </h1>
+
+              <p
+                className="hero-reveal mt-6 max-w-lg text-base leading-8 text-zinc-700 sm:text-lg"
+                style={{ animationDelay: "250ms" }}
+              >
+                Locação de plataformas elevatórias para obra, indústria e manutenção, com resposta rápida e frota pronta para entrar no canteiro.
+              </p>
+
+              <div className="hero-reveal mt-8 flex flex-col gap-4 sm:flex-row" style={{ animationDelay: "330ms" }}>
                 <Link
                   href="#formulario"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#f99c2c]"
@@ -204,88 +227,45 @@ export default function Page() {
                 </Link>
                 <Link
                   href="#frota"
-                  className="inline-flex items-center justify-center rounded-full border border-zinc-950/15 bg-white/70 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-zinc-950 transition hover:border-[#f99c2c] hover:bg-white"
+                  className="inline-flex items-center justify-center rounded-full border border-zinc-950/15 bg-white/75 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-zinc-950 transition hover:border-[#f99c2c] hover:bg-white"
                 >
                   Ver equipamentos
                 </Link>
               </div>
+
             </div>
 
-            <div className="order-1 lg:order-2">
-              <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
-                <article className="group relative min-h-[25rem] overflow-hidden rounded-[2.2rem] border border-black/10 bg-zinc-900 shadow-[0_30px_70px_rgba(0,0,0,0.18)] sm:min-h-[32rem]">
-                  <Image
-                    src="/images/IMG-20260224-WA0026.jpg"
-                    alt="Plataforma elevatória em destaque"
-                    fill
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 55vw"
-                    className="object-cover transition duration-700 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/72 via-black/10 to-transparent" />
-                  <div className="absolute left-5 top-5 rounded-full border border-white/20 bg-black/45 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.3em] text-white">
-                    Plataforma elevatória
-                  </div>
-                  <div className="absolute inset-x-0 bottom-0 p-6 sm:p-8">
-                    <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#f99c2c]">Destaque principal</p>
-                    <h2 className="mt-3 max-w-md text-3xl font-black uppercase leading-tight text-white sm:text-4xl">
-                      Altura, alcance e presença visual forte logo na entrada.
-                    </h2>
-                  </div>
-                </article>
+            <div className="relative min-h-[22rem] sm:min-h-[30rem] lg:min-h-[41rem] xl:min-h-[44rem]">
+              <div className="absolute left-[10%] top-[12%] h-48 w-48 rounded-full bg-[#f99c2c]/18 blur-3xl sm:h-64 sm:w-64 lg:left-[18%] lg:top-[10%] lg:h-80 lg:w-80" />
+              <div className="absolute inset-x-[12%] bottom-[10%] h-9 rounded-full bg-black/20 blur-3xl lg:inset-x-[18%] lg:bottom-[12%]" />
 
-                <div className="grid gap-4">
-                  <article className="relative min-h-[15rem] overflow-hidden rounded-[2rem] border border-black/10 bg-white shadow-[0_24px_50px_rgba(0,0,0,0.12)]">
+              <div className="absolute inset-0 flex items-end justify-end lg:items-center">
+                <div className="hero-machine-shell relative w-full max-w-[54rem] lg:translate-x-6 lg:translate-y-6 xl:translate-x-0">
+                  <div className="hero-machine-float">
                     <Image
-                      src="/images/IMG-20260223-WA0033.jpg"
-                      alt="Plataforma tesoura em operação"
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 28vw"
-                      className="object-cover"
+                      src="/images/boom-lift-hero.png"
+                      alt="Plataforma elevatória articulada Terraar Brasil"
+                      width={1152}
+                      height={804}
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 62vw"
+                      className="h-auto w-full object-contain object-right drop-shadow-[0_40px_38px_rgba(0,0,0,0.18)]"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/62 via-black/0 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 p-5">
-                      <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#f99c2c]">Frota real</p>
-                      <p className="mt-2 text-xl font-bold text-white">Visual técnico, imediato e comercial.</p>
-                    </div>
-                  </article>
-
-                  <article className="relative min-h-[15rem] overflow-hidden rounded-[2rem] border border-dashed border-zinc-950/20 bg-[linear-gradient(135deg,#d7d2c9,#f5f2ec)] shadow-[0_24px_50px_rgba(0,0,0,0.08)]">
-                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(249,156,44,0.2),transparent_35%)]" />
-                    <div className="relative flex h-full flex-col justify-between p-6">
-                      <div className="inline-flex w-fit rounded-full border border-zinc-950/10 bg-white/75 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.28em] text-zinc-700">
-                        Placeholder visual
-                      </div>
-                      <div>
-                        <p className="text-xs font-bold uppercase tracking-[0.32em] text-[#c96f00]">Linha amarela</p>
-                        <h3 className="mt-3 max-w-xs text-2xl font-black uppercase leading-tight text-zinc-950">
-                          Espaço pronto para foto de escavadeira ou retroescavadeira.
-                        </h3>
-                        <p className="mt-3 max-w-sm text-sm leading-6 text-zinc-700">
-                          A estrutura da capa já acomoda a segunda imagem principal sem roubar o protagonismo das máquinas.
-                        </p>
-                      </div>
-                    </div>
-                  </article>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div className="mt-4 grid gap-3 border-t border-zinc-950/10 pt-5 text-[11px] font-bold uppercase tracking-[0.28em] text-zinc-600 sm:grid-cols-3">
-            <div className="rounded-full bg-white/70 px-4 py-3 text-center">Plataformas elevatórias</div>
-            <div className="rounded-full bg-white/70 px-4 py-3 text-center">Linha amarela em destaque</div>
-            <div className="rounded-full bg-white/70 px-4 py-3 text-center">Locação para obra, indústria e manutenção</div>
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section-shell">
         <div className="section-header">
-          <p className="section-kicker">Vídeo em destaque</p>
-          <h2 className="section-title">Assista como a Terraar faz a diferença</h2>
+          <p className="section-kicker">Apresentação institucional</p>
+          <h2 className="section-title">Veja a estrutura da Terraar para atender sua operação</h2>
           <p className="section-copy">
-            Uma apresentação visual forte para gerar confiança logo nos primeiros segundos.
+            Um resumo direto da operação, da frota e da capacidade de atendimento para apoiar sua decisão de contratação.
           </p>
         </div>
 
@@ -309,7 +289,7 @@ export default function Page() {
             href="#formulario"
             className="inline-flex items-center gap-2 rounded-full border border-[rgba(249,156,44,0.4)] bg-[rgba(249,156,44,0.1)] px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-[#f99c2c] transition hover:bg-[#f99c2c] hover:text-white"
           >
-            Quero atendimento rápido
+            Solicitar proposta
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -318,9 +298,9 @@ export default function Page() {
       <section id="frota" className="section-shell">
         <div className="section-header">
           <p className="section-kicker">Nossa Frota</p>
-          <h2 className="section-title">Máquinas para cada etapa do trabalho em altura</h2>
+          <h2 className="section-title">Equipamentos para diferentes alturas, cargas e tipos de operação</h2>
           <p className="section-copy">
-            Equipamentos reais, visual robusto e apresentação comercial à altura do seu serviço.
+            Modelos selecionados para atender manutenção, logística, montagem, instalação e demandas industriais com segurança.
           </p>
         </div>
 
@@ -353,7 +333,7 @@ export default function Page() {
             href="#formulario"
             className="inline-flex items-center gap-2 rounded-full bg-[#f99c2c] px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#e08a21]"
           >
-            Solicitar cotação da frota
+            Falar com a equipe comercial
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -365,7 +345,7 @@ export default function Page() {
         <div className="rounded-[2rem] border border-[rgba(249,156,44,0.2)] bg-gradient-to-br from-zinc-900 via-zinc-950 to-zinc-900 p-8 sm:p-10">
           <div className="section-header !max-w-3xl !px-0 !pb-0">
             <p className="section-kicker">Por que escolher a Terraar?</p>
-            <h2 className="section-title">Quebra de objeção com credibilidade, rapidez e presença profissional</h2>
+            <h2 className="section-title">Contratação mais segura, ágil e adequada à necessidade da sua operação</h2>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -395,9 +375,9 @@ export default function Page() {
       <section id="galeria" className="section-shell">
         <div className="section-header">
           <p className="section-kicker">Galeria</p>
-          <h2 className="section-title">Obras reais, máquinas reais, presença real no canteiro</h2>
+          <h2 className="section-title">Operações e equipamentos em uso real</h2>
           <p className="section-copy">
-            Fotografias de operações e equipamentos brasileiros para reforçar confiança visual na marca.
+            Registros da frota em campo para reforçar confiança, aplicação prática e capacidade de atendimento.
           </p>
         </div>
 
@@ -433,7 +413,7 @@ export default function Page() {
             href="#formulario"
             className="inline-flex items-center gap-2 rounded-full bg-[#f99c2c] px-6 py-3 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#e08a21]"
           >
-            Pedir proposta agora
+            Solicitar orçamento agora
             <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
@@ -457,10 +437,10 @@ export default function Page() {
             <div className="max-w-4xl">
               <p className="text-sm font-bold uppercase tracking-[0.35em] text-zinc-950/80">Fale com a Terraar</p>
               <h2 className="mt-4 text-4xl font-black uppercase leading-none sm:text-5xl">
-                Sua obra precisa de máquina pesada com resposta rápida.
+                Receba uma proposta rápida para a máquina certa.
               </h2>
               <p className="mt-5 max-w-2xl text-base leading-8 text-zinc-900/85 sm:text-lg">
-                Receba atendimento direto no WhatsApp e avance com uma apresentação forte, moderna e pronta para converter.
+                Informe sua necessidade e nossa equipe retorna com indicação técnica e comercial para acelerar sua contratação.
               </p>
             </div>
 
@@ -474,9 +454,9 @@ export default function Page() {
             >
               <div className="mb-5">
                 <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#f99c2c]">Solicite contato</p>
-                <h3 className="mt-2 text-2xl font-bold">Formulário rápido</h3>
+                <h3 className="mt-2 text-2xl font-bold">Fale com um especialista</h3>
                 <p className="mt-2 text-sm leading-6 text-zinc-400">
-                  Preencha e nossa equipe retorna com agilidade para indicar a plataforma ideal.
+                  Preencha os dados e receba retorno comercial para locação, disponibilidade e recomendação do equipamento ideal.
                 </p>
               </div>
 
@@ -491,12 +471,6 @@ export default function Page() {
                   placeholder="WhatsApp"
                   className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#f99c2c]"
                 />
-                <select className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition focus:border-[#f99c2c]">
-                  <option className="bg-zinc-950">Tipo de plataforma</option>
-                  <option className="bg-zinc-950">S0807AC</option>
-                  <option className="bg-zinc-950">S1412AC+</option>
-                  <option className="bg-zinc-950">Preciso de ajuda para escolher</option>
-                </select>
                 <textarea
                   placeholder="Conte rapidamente sua necessidade"
                   rows={4}

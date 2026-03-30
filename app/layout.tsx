@@ -1,5 +1,17 @@
 import type { Metadata } from "next";
+import { Barlow_Condensed, Manrope } from "next/font/google";
 import "./globals.css";
+
+const bodyFont = Manrope({
+  subsets: ["latin"],
+  variable: "--font-body",
+});
+
+const headlineFont = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-headline",
+});
 
 export const metadata: Metadata = {
   title: "Terraar Brasil",
@@ -13,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className={`${bodyFont.variable} ${headlineFont.variable}`}>{children}</body>
     </html>
   );
 }

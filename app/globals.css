@@ -9,6 +9,7 @@
   --accent-dark: #e08a21;
   --accent-soft: rgba(249, 156, 44, 0.12);
   --accent-border: rgba(249, 156, 44, 0.32);
+  --hero-surface: #f4efe7;
 }
 
 html {
@@ -16,6 +17,7 @@ html {
 }
 
 body {
+  font-family: var(--font-body), sans-serif;
   background:
     radial-gradient(circle at top, rgba(249, 156, 44, 0.14), transparent 24%),
     linear-gradient(180deg, #09090b 0%, #09090b 100%);
@@ -28,6 +30,38 @@ body {
   }
   100% {
     transform: scale(1.12);
+  }
+}
+
+@keyframes heroRevealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroMachineIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(28px, 28px, 0) scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes heroMachineFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
@@ -61,6 +95,44 @@ body {
 .hero-zoom {
   animation: heroZoom 3s ease-out forwards;
   will-change: transform;
+}
+
+.hero-grid {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.18)),
+    repeating-linear-gradient(90deg, rgba(24, 24, 27, 0.08) 0 1px, transparent 1px 72px),
+    repeating-linear-gradient(0deg, rgba(24, 24, 27, 0.06) 0 1px, transparent 1px 72px);
+  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 0.48;
+}
+
+.hero-reveal {
+  opacity: 0;
+  animation: heroRevealUp 0.72s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-machine-shell {
+  opacity: 0;
+  animation: heroMachineIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.18s forwards;
+}
+
+.hero-machine-float {
+  animation: heroMachineFloat 6s ease-in-out 1.2s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-zoom,
+  .hero-reveal,
+  .hero-machine-shell,
+  .hero-machine-float {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 ::-webkit-scrollbar {
