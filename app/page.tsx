@@ -21,12 +21,6 @@ const WHATSAPP_URL = "https://wa.me/5511999999999";
 const INSTAGRAM_URL = "https://www.instagram.com/terraar.brasil/";
 const INSTITUTIONAL_VIDEO_EMBED = "https://www.youtube.com/embed/a3NtvovVe5w?rel=0&modestbranding=1";
 
-const highlights = [
-  { value: "12", label: "imagens reais da frota" },
-  { value: "24/7", label: "apoio logístico e operação" },
-  { value: "100%", label: "identidade visual Terraar" },
-];
-
 const fleetCards = [
   {
     title: "Retroescavadeira LiuGong 766A",
@@ -191,37 +185,37 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-[#050505] text-white">
+    <main className="min-h-screen bg-zinc-950 text-white">
       <div className="fixed inset-x-0 top-0 z-[60] h-1 bg-white/5">
         <div
-          className="h-full bg-[linear-gradient(90deg,#c97d1d,#ffbb47,#c97d1d)] transition-[width] duration-150"
+          className="h-full bg-[linear-gradient(90deg,#f99c2c,#ffb347,#f99c2c)] transition-[width] duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
 
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[rgba(6,6,6,0.72)] backdrop-blur-xl">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[rgba(244,239,231,0.82)] text-zinc-950 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <Link href="#top" className="flex min-w-0 items-center gap-3">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full border border-[rgba(255,187,71,0.25)] bg-white shadow-[0_12px_32px_rgba(201,125,29,0.22)]">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full border border-[rgba(249,156,44,0.32)] bg-white shadow-[0_12px_32px_rgba(249,156,44,0.18)]">
               <Image src="/images/terraar-logo.jpg" alt="Logo Terraar Brasil" fill sizes="48px" className="object-cover" priority />
             </div>
             <div className="min-w-0">
-              <p className="truncate font-[family:var(--font-headline)] text-lg font-bold uppercase tracking-[0.16em] text-[#ffbb47] sm:text-2xl sm:tracking-[0.24em]">
+              <p className="truncate font-[family:var(--font-headline)] text-lg font-bold uppercase tracking-[0.16em] text-[#d47a12] sm:text-2xl sm:tracking-[0.24em]">
                 <span className="sm:hidden">Terraar</span>
                 <span className="hidden sm:inline">Terraar Brasil</span>
               </p>
-              <p className="hidden text-xs text-zinc-400 sm:block">Locação de máquinas pesadas para terraplanagem, apoio e mobilização</p>
+              <p className="hidden text-xs text-zinc-600 sm:block">Locação de plataformas elevatórias para obra, indústria e manutenção</p>
             </div>
           </Link>
 
-          <nav className="hidden items-center gap-8 text-sm font-semibold text-zinc-300 md:flex">
-            <Link href="#frota" className="transition hover:text-[#ffbb47]">
-              Frota pesada
+          <nav className="hidden items-center gap-8 text-sm font-semibold text-zinc-700 md:flex">
+            <Link href="#frota" className="transition hover:text-[#f99c2c]">
+              Equipamentos
             </Link>
-            <Link href="#diferenciais" className="transition hover:text-[#ffbb47]">
+            <Link href="#diferenciais" className="transition hover:text-[#f99c2c]">
               Diferenciais
             </Link>
-            <Link href="#galeria" className="transition hover:text-[#ffbb47]">
+            <Link href="#galeria" className="transition hover:text-[#f99c2c]">
               Galeria
             </Link>
           </nav>
@@ -229,86 +223,91 @@ export default function Page() {
           <Link
             href={WHATSAPP_URL}
             target="_blank"
-            className="inline-flex items-center justify-center rounded-full bg-[#c97d1d] px-5 py-3 text-sm font-bold text-white shadow-[0_16px_32px_rgba(201,125,29,0.32)] transition hover:bg-[#b56d14]"
+            className="inline-flex items-center justify-center rounded-full bg-[#f99c2c] px-5 py-3 text-sm font-bold text-white shadow-[0_16px_32px_rgba(249,156,44,0.28)] transition hover:bg-[#e08a21]"
           >
             WhatsApp
           </Link>
         </div>
       </header>
 
-      <section id="top" className="relative isolate overflow-hidden bg-[#050505] pt-[5.25rem]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,187,71,0.18),transparent_26%),radial-gradient(circle_at_bottom_right,rgba(255,187,71,0.08),transparent_30%),linear-gradient(135deg,#060606_0%,#111111_46%,#1b1b1b_100%)]" />
-        <div className="absolute inset-0 opacity-[0.18] [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:84px_84px]" />
-        <div className="absolute inset-y-0 right-0 hidden w-[45%] bg-[linear-gradient(90deg,transparent,rgba(255,187,71,0.12))] lg:block" />
+      <section id="top" className="relative isolate overflow-hidden bg-[var(--hero-surface)] pt-[5.25rem] text-zinc-950">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(249,156,44,0.22),transparent_28%),linear-gradient(118deg,#f7f3ec_0%,#f4f0e9_44%,#ece6dd_100%)]" />
+        <div className="absolute inset-y-0 right-0 hidden w-[60%] lg:block">
+          <div className="hero-grid h-full w-full" />
+        </div>
+        <div className="absolute left-[-8rem] top-[18%] h-52 w-52 rounded-full bg-[#f99c2c]/12 blur-3xl sm:h-72 sm:w-72" />
+        <div className="pointer-events-none absolute bottom-[-1rem] right-[-8rem] h-[18rem] w-[30rem] opacity-[0.18] sm:right-[-4rem] sm:opacity-[0.24] lg:hidden">
+          <Image src="/images/boom-lift-hero.png" alt="" fill sizes="100vw" className="object-contain object-right" />
+        </div>
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-[linear-gradient(180deg,rgba(244,239,231,0),var(--hero-surface))]" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 py-12 lg:min-h-[calc(100svh-5.25rem)] lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:items-center lg:py-0">
-            <div className="max-w-2xl">
-              <span className="hero-reveal inline-flex rounded-full border border-[rgba(255,187,71,0.28)] bg-[rgba(255,187,71,0.08)] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.34em] text-[#ffbb47]">
-                Frota pesada Terraar
+          <div className="grid gap-10 py-10 lg:min-h-[calc(100svh-5.25rem)] lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:items-center lg:gap-4 lg:py-0">
+            <div className="relative z-10 max-w-xl">
+              <span
+                className="hero-reveal inline-flex rounded-full border border-[rgba(249,156,44,0.22)] bg-white/85 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.34em] text-[#c96f00] shadow-[0_12px_34px_rgba(0,0,0,0.06)]"
+                style={{ animationDelay: "0ms" }}
+              >
+                Plataformas elevatórias para locação
               </span>
 
-              <p className="hero-reveal mt-8 text-xs font-bold uppercase tracking-[0.42em] text-zinc-500 sm:text-sm" style={{ animationDelay: "80ms" }}>
-                Locação de máquinas com presença de obra
+              <p
+                className="hero-reveal mt-6 hidden text-xs font-bold uppercase tracking-[0.42em] text-zinc-500 sm:mt-8 sm:block sm:text-sm"
+                style={{ animationDelay: "90ms" }}
+              >
+                Terraar Brasil
               </p>
 
               <h1
-                className="hero-reveal mt-4 font-[family:var(--font-headline)] text-[3.25rem] font-bold uppercase leading-[0.9] tracking-[-0.04em] text-white sm:text-[4.8rem] lg:text-[6rem]"
-                style={{ animationDelay: "150ms" }}
+                className="hero-reveal mt-5 font-[family:var(--font-headline)] text-[3.05rem] font-bold uppercase leading-[0.88] tracking-[-0.03em] text-zinc-950 sm:mt-3 sm:text-[4.7rem] lg:text-[5.8rem]"
+                style={{ animationDelay: "170ms" }}
               >
-                Equipamentos pesados
-                <span className="block text-[#ffbb47]">de alta performance.</span>
+                Plataformas
+                <span className="block">para trabalho</span>
+                <span className="block text-[#f99c2c]">em altura.</span>
               </h1>
 
-              <p className="hero-reveal mt-6 max-w-xl text-base leading-8 text-zinc-300 sm:text-lg" style={{ animationDelay: "230ms" }}>
-                Retroescavadeiras, pá carregadeiras, mini escavadeiras, rolos compactadores e caminhões equipados para sua obra com visual profissional, potência e confiança.
+              <p
+                className="hero-reveal mt-6 max-w-lg text-base leading-8 text-zinc-700 sm:text-lg"
+                style={{ animationDelay: "250ms" }}
+              >
+                Locação de plataformas elevatórias para obra, indústria e manutenção, com resposta rápida e frota pronta para entrar no canteiro.
               </p>
 
-              <div className="hero-reveal mt-8 flex flex-col gap-4 sm:flex-row" style={{ animationDelay: "310ms" }}>
+              <div className="hero-reveal mt-8 flex flex-col gap-4 sm:flex-row" style={{ animationDelay: "330ms" }}>
                 <Link
-                  href="#galeria"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-[#c97d1d] px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#b56d14]"
+                  href="#formulario"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-zinc-950 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#f99c2c]"
                 >
-                  Ver a frota
+                  Solicitar cotação
                   <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link
-                  href="#formulario"
-                  className="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:border-[#ffbb47] hover:bg-white/10"
+                  href="#frota"
+                  className="inline-flex items-center justify-center rounded-full border border-zinc-950/15 bg-white/75 px-7 py-4 text-sm font-bold uppercase tracking-[0.2em] text-zinc-950 transition hover:border-[#f99c2c] hover:bg-white"
                 >
-                  Solicitar cotação
+                  Ver equipamentos
                 </Link>
-              </div>
-
-              <div className="hero-reveal mt-10 grid gap-4 sm:grid-cols-3" style={{ animationDelay: "390ms" }}>
-                {highlights.map((item) => (
-                  <div key={item.label} className="rounded-[1.5rem] border border-white/10 bg-white/[0.04] px-5 py-4 backdrop-blur-sm">
-                    <p className="text-2xl font-black text-[#ffbb47]">{item.value}</p>
-                    <p className="mt-1 text-sm leading-6 text-zinc-300">{item.label}</p>
-                  </div>
-                ))}
               </div>
             </div>
 
-            <div className="relative min-h-[28rem] lg:min-h-[42rem]">
-              <div className="absolute inset-0 rounded-[2rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] shadow-[0_40px_90px_rgba(0,0,0,0.4)]" />
-              <div className="absolute left-6 right-6 top-6 rounded-[1.5rem] border border-[rgba(255,187,71,0.18)] bg-black/30 px-5 py-4 backdrop-blur-sm">
-                <p className="text-xs font-bold uppercase tracking-[0.28em] text-[#ffbb47]">Estrutura real em campo</p>
-                <p className="mt-2 text-sm leading-6 text-zinc-300">Suporte, logística e equipamentos apresentados no contexto da obra para transmitir credibilidade imediata.</p>
-              </div>
-              <div className="absolute inset-x-5 bottom-5 top-28 overflow-hidden rounded-[1.6rem]">
-                <Image
-                  src="/images/frota-pesada/caminhao-comboio-vw-constellation-24280.jpeg"
-                  alt="Caminhão comboio e oficina móvel Terraar"
-                  fill
-                  priority
-                  sizes="(max-width: 1024px) 100vw, 52vw"
-                  className="hero-zoom object-cover"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.05),rgba(0,0,0,0.6))]" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <p className="text-xs font-bold uppercase tracking-[0.26em] text-[#ffbb47]">Destaque</p>
-                  <h2 className="mt-2 text-3xl font-black uppercase leading-none text-white sm:text-4xl">Caminhão Comboio + Oficina Móvel</h2>
+            <div className="relative min-h-[22rem] sm:min-h-[30rem] lg:min-h-[41rem] xl:min-h-[44rem]">
+              <div className="absolute left-[10%] top-[12%] h-48 w-48 rounded-full bg-[#f99c2c]/18 blur-3xl sm:h-64 sm:w-64 lg:left-[18%] lg:top-[10%] lg:h-80 lg:w-80" />
+              <div className="absolute inset-x-[12%] bottom-[10%] h-9 rounded-full bg-black/20 blur-3xl lg:inset-x-[18%] lg:bottom-[12%]" />
+
+              <div className="absolute inset-0 flex items-end justify-end lg:items-center">
+                <div className="hero-machine-shell relative w-full max-w-[54rem] lg:translate-x-6 lg:translate-y-6 xl:translate-x-0">
+                  <div className="hero-machine-float">
+                    <Image
+                      src="/images/boom-lift-hero.png"
+                      alt="Plataforma elevatória articulada Terraar Brasil"
+                      width={1152}
+                      height={804}
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 62vw"
+                      className="h-auto w-full object-contain object-right drop-shadow-[0_40px_38px_rgba(0,0,0,0.18)]"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
