@@ -71,14 +71,14 @@ const gallery = [
     image: "/images/frota-pesada/caminhao-comboio-vw-constellation-24280.jpeg",
     title: "Caminhão comboio para manter sua obra rodando",
     description: "Suporte em campo para reduzir paradas e manter o ritmo da sua operação.",
-    className: "md:col-span-2 md:row-span-2",
+    className: "sm:col-span-2 xl:col-span-2 xl:row-span-2",
     icon: Wrench,
   },
   {
     image: "/images/frota-pesada/caminhao-tanque-patio-maquinas-terraar.jpeg",
     title: "Estrutura própria para atender sua obra com agilidade",
     description: "Frota e apoio preparados para entregar a máquina certa sem complicação.",
-    className: "md:row-span-2",
+    className: "xl:row-span-2",
     icon: Building2,
   },
   {
@@ -99,7 +99,7 @@ const gallery = [
     image: "/images/frota-pesada/liugong-908e-vista-conjunto-caminhao-maquina.jpeg",
     title: "Mini Escavadeira entregue pronta para entrar em serviço",
     description: "Receba a máquina no local com mais rapidez e menos atraso na mobilização.",
-    className: "md:col-span-2",
+    className: "sm:col-span-2 xl:col-span-1",
     icon: Truck,
   },
   {
@@ -127,7 +127,35 @@ const gallery = [
     image: "/images/frota-pesada/patio-maquinas-liugong-838t-bobcat-outras.jpeg",
     title: "Variedade de máquinas para atender diferentes etapas da obra",
     description: "Mais opções para encontrar a solução certa com rapidez e segurança.",
-    className: "md:col-span-2",
+    className: "sm:col-span-2 xl:col-span-2",
+    icon: Building2,
+  },
+  {
+    image: "/images/frota-pesada/liugong-915e-canteiro-entardecer.jpeg",
+    title: "Escavadeira Hidraulica LiuGong 915E",
+    description: "Escavadeira hidraulica LiuGong 915E da frota TERRAAR estacionada em canteiro de obras.",
+    className: "xl:row-span-2",
+    icon: Drill,
+  },
+  {
+    image: "/images/frota-pesada/retroescavadeira-rolo-compactador-terraplenagem-1.jpeg",
+    title: "Retroescavadeira e Rolo Compactador",
+    description: "Retroescavadeira LiuGong e rolo compactador pe de carneiro da TERRAAR preparados para servico de terraplenagem.",
+    className: "",
+    icon: Drill,
+  },
+  {
+    image: "/images/frota-pesada/frota-escavadeira-rolo-pa-carregadeira-operacao.jpeg",
+    title: "Escavadeira, Rolo Compactador e Pa Carregadeira",
+    description: "Frota de maquinario pesado da TERRAAR em operacao no canteiro de obras, incluindo escavadeira LiuGong 915E.",
+    className: "sm:col-span-2 xl:col-span-2",
+    icon: Building2,
+  },
+  {
+    image: "/images/frota-pesada/retroescavadeira-rolo-compactador-terraplenagem-2.jpeg",
+    title: "Retroescavadeira e Rolo Compactador",
+    description: "Retroescavadeira LiuGong e rolo compactador pe de carneiro da TERRAAR preparados para servico de terraplenagem.",
+    className: "",
     icon: Building2,
   },
 ];
@@ -403,7 +431,7 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="mt-10 grid auto-rows-[240px] grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid auto-rows-[240px] grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {gallery.map((item, index) => {
             const Icon = item.icon;
 
@@ -419,7 +447,7 @@ export default function Page() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="object-cover transition duration-500 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.02),rgba(0,0,0,0.86))]" />
