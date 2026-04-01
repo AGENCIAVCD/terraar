@@ -110,13 +110,6 @@ const gallery = [
     icon: Drill,
   },
   {
-    image: "/images/frota-pesada/liugong-6112e-rolo-compactador-vista-traseira.jpeg",
-    title: "Rolo Compactador LiuGong 6112E",
-    description: "Compactação eficiente para manter o avanço da obra com mais produtividade.",
-    className: "",
-    icon: Drill,
-  },
-  {
     image: "/images/frota-pesada/liugong-9035e-terraar-frontal-com-concha.jpeg",
     title: "LiuGong 9035E - Mini Escavadeira",
     description: "Compacta, prática e pronta para obras urbanas e serviços com pouco espaço.",
