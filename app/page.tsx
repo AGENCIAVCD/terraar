@@ -131,9 +131,9 @@ const gallery = [
     icon: Drill,
   },
   {
-    image: "/images/frota-pesada/retroescavadeira-rolo-compactador-terraplenagem-1.jpeg",
-    title: "Retroescavadeira e Rolo Compactador",
-    description: "Retroescavadeira LiuGong e rolo compactador pe de carneiro da TERRAAR preparados para servico de terraplenagem.",
+    image: "/images/frota-pesada/liugong-6112e-rolo-compactador-vista-traseira.jpeg",
+    title: "Rolo Compactador LiuGong 6112E",
+    description: "Rolo compactador LiuGong 6112E da TERRAAR pronto para compactacao em servicos de terraplenagem.",
     className: "",
     icon: Drill,
   },
