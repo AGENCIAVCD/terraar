@@ -1,5 +1,6 @@
 "use client";
 
+import CalculadoraPlataformas from "@/components/CalculadoraPlataformas";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -393,6 +394,8 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <CalculadoraPlataformas />
 
       <section id="diferenciais" className="section-shell">
         <div className="rounded-[2rem] border border-[rgba(255,187,71,0.2)] bg-gradient-to-br from-[#121212] via-[#090909] to-[#151515] p-8 sm:p-10">
