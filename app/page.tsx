@@ -644,7 +644,10 @@ export default function Page() {
       </footer>
 
       {activeModal !== null && activeModalItem !== null ? (
-        <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
+        <div
+          className="fixed inset-0 z-[110] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm"
+          onClick={() => setActiveModal(null)}
+        >
           <button
             type="button"
             onClick={() => setActiveModal(null)}
@@ -667,7 +670,10 @@ export default function Page() {
             </button>
           ) : null}
 
-          <div className="w-full max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 bg-zinc-950 shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
+          <div
+            className="w-full max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 bg-zinc-950 shadow-[0_20px_80px_rgba(0,0,0,0.6)]"
+            onClick={(event) => event.stopPropagation()}
+          >
             <div className="relative aspect-[16/10] w-full">
               <Image
                 src={activeModalItem.image}
