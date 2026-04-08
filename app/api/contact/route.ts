@@ -35,23 +35,25 @@ export async function POST(request: Request) {
     await resend.emails.send({
       from,
       to: [DESTINATION_EMAIL],
-      subject: `Novo contato do site - ${name}`,
+      subject: `Novo lead comercial do site - ${name}`,
       replyTo: DESTINATION_EMAIL,
       text: [
-        "Novo lead recebido pelo site Terraar Brasil.",
+        "Novo lead comercial recebido pelo site Terraar Brasil.",
+        "Entre em contato o quanto antes para avancar com a cotacao e fechar a locacao.",
         "",
         `Nome: ${name}`,
         `WhatsApp: ${phone}`,
         "",
-        "Mensagem:",
+        "Necessidade do cliente:",
         message,
       ].join("\n"),
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
-          <h2 style="margin-bottom: 16px;">Novo lead recebido pelo site Terraar Brasil</h2>
+          <h2 style="margin-bottom: 16px;">Novo lead comercial recebido pelo site Terraar Brasil</h2>
+          <p style="margin-bottom: 16px; color: #b45309;"><strong>Atendimento recomendado:</strong> responder rapido com cotacao, disponibilidade e prazo de entrega para aumentar a chance de fechamento.</p>
           <p><strong>Nome:</strong> ${name}</p>
           <p><strong>WhatsApp:</strong> ${phone}</p>
-          <p><strong>Mensagem:</strong></p>
+          <p><strong>Necessidade do cliente:</strong></p>
           <p style="white-space: pre-line;">${message}</p>
         </div>
       `,

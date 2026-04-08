@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 
-const WHATSAPP_URL = "https://wa.me/5511999999999";
+const WHATSAPP_URL = "https://wa.me/5511913641056";
 const INSTAGRAM_URL = "https://www.instagram.com/terraar.brasil/";
 const INSTITUTIONAL_VIDEO_EMBED = "https://www.youtube.com/embed/a3NtvovVe5w?rel=0&modestbranding=1";
 
