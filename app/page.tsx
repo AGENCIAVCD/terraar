@@ -4,6 +4,7 @@ import CalculadoraPlataformas from "@/components/CalculadoraPlataformas";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import type { FormEvent } from "react";
 import {
   ArrowRight,
   Building2,
@@ -158,6 +159,52 @@ export default function Page() {
   const router = useRouter();
   const [activeGalleryIndex, setActiveGalleryIndex] = useState<number | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formError, setFormError] = useState("");
+
+  const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setFormError("");
+
+    if (!formData.name.trim() || !formData.phone.trim() || !formData.message.trim()) {
+      setFormError("Preencha nome, WhatsApp e mensagem para enviar sua solicitação.");
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const data = (await response.json().catch(() => null)) as { error?: string } | null;
+        throw new Error(data?.error || "Nao foi possivel enviar sua solicitacao.");
+      }
+
+      setFormData({
+        name: "",
+        phone: "",
+        message: "",
+      });
+      router.push("/obrigado");
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Nao foi possivel enviar sua solicitacao.";
+      setFormError(message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     if (activeGalleryIndex === null) return;
@@ -488,10 +535,7 @@ export default function Page() {
 
             <form
               id="formulario"
-              onSubmit={(event) => {
-                event.preventDefault();
-                router.push("/obrigado");
-              }}
+              onSubmit={handleContactSubmit}
               className="rounded-[1.75rem] border border-zinc-950/10 bg-zinc-950 p-6 text-white shadow-[0_18px_60px_rgba(0,0,0,0.25)]"
             >
               <div className="mb-5">
@@ -505,26 +549,41 @@ export default function Page() {
               <div className="grid gap-4">
                 <input
                   type="text"
+                  name="name"
                   placeholder="Seu nome"
+                  value={formData.name}
+                  onChange={(event) => setFormData((current) => ({ ...current, name: event.target.value }))}
                   className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#ffbb47]"
+                  disabled={isSubmitting}
                 />
                 <input
                   type="tel"
+                  name="phone"
                   placeholder="WhatsApp"
+                  value={formData.phone}
+                  onChange={(event) => setFormData((current) => ({ ...current, phone: event.target.value }))}
                   className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#ffbb47]"
+                  disabled={isSubmitting}
                 />
                 <textarea
+                  name="message"
                   placeholder="Qual máquina você precisa e para quando?"
                   rows={4}
+                  value={formData.message}
+                  onChange={(event) => setFormData((current) => ({ ...current, message: event.target.value }))}
                   className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#ffbb47]"
+                  disabled={isSubmitting}
                 />
               </div>
 
+              {formError ? <p className="mt-4 text-sm font-medium text-[#ffbb47]">{formError}</p> : null}
+
               <button
                 type="submit"
-                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#c97d1d] px-6 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#b56d14]"
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#c97d1d] px-6 py-4 text-sm font-bold uppercase tracking-[0.2em] text-white transition hover:bg-[#b56d14] disabled:cursor-not-allowed disabled:opacity-70"
+                disabled={isSubmitting}
               >
-                Enviar solicitação
+                {isSubmitting ? "Enviando..." : "Enviar solicitação"}
                 <ArrowRight className="h-4 w-4" />
               </button>
             </form>
