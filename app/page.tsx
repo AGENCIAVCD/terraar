@@ -39,16 +39,23 @@ const fleetCards = [
   {
     title: "Plataforma Articulada Compacta",
     badge: "12M",
-    description: "Indicada para manutenção, instalação e acesso em pontos com obstáculos e áreas de difícil alcance.",
-    images: ["/images/hero-pta-referencia.jpeg"],
+    description: "Equipamento articulado entregue no canteiro, pronto para entrar em operação com mobilização rápida e segura.",
+    images: ["/images/plataforma-articulada-entrega.png"],
   },
   {
     title: "Plataforma Articulada para Maior Alcance",
     badge: "16M+",
-    description: "Mais alcance lateral e flexibilidade para operações em altura com produtividade e segurança.",
-    images: ["/images/boom-lift-hero.png"],
+    description: "Ideal para acessar pontos com obstáculos e trabalhar em altura na obra com mais alcance lateral e precisão.",
+    images: ["/images/plataforma-articulada-obra.png"],
   },
 ];
+
+type ImageModalState =
+  | {
+      collection: "fleet" | "gallery";
+      index: number;
+    }
+  | null;
 
 const reasons = [
   {
@@ -157,7 +164,7 @@ const gallery = [
 
 export default function Page() {
   const router = useRouter();
-  const [activeGalleryIndex, setActiveGalleryIndex] = useState<number | null>(null);
+  const [activeModal, setActiveModal] = useState<ImageModalState>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [formData, setFormData] = useState({
     name: "",
@@ -166,6 +173,20 @@ export default function Page() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
+
+  const activeModalItem =
+    activeModal === null
+      ? null
+      : activeModal.collection === "fleet"
+        ? {
+            image: fleetCards[activeModal.index].images[0],
+            title: fleetCards[activeModal.index].title,
+            description: fleetCards[activeModal.index].description,
+          }
+        : gallery[activeModal.index];
+
+  const whatsappQuoteUrl = (itemTitle: string) =>
+    `${WHATSAPP_URL}?text=${encodeURIComponent(`Olá! Quero receber orçamento da ${itemTitle}.`)}`;
 
   const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -207,25 +228,33 @@ export default function Page() {
   };
 
   useEffect(() => {
-    if (activeGalleryIndex === null) return;
+    if (activeModal === null) return;
 
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
-        setActiveGalleryIndex(null);
+        setActiveModal(null);
       }
 
-      if (event.key === "ArrowRight") {
-        setActiveGalleryIndex((prev) => (prev === null ? 0 : (prev + 1) % gallery.length));
+      if (activeModal?.collection === "gallery" && event.key === "ArrowRight") {
+        setActiveModal((prev) =>
+          prev === null || prev.collection !== "gallery"
+            ? prev
+            : { collection: "gallery", index: (prev.index + 1) % gallery.length },
+        );
       }
 
-      if (event.key === "ArrowLeft") {
-        setActiveGalleryIndex((prev) => (prev === null ? 0 : (prev - 1 + gallery.length) % gallery.length));
+      if (activeModal?.collection === "gallery" && event.key === "ArrowLeft") {
+        setActiveModal((prev) =>
+          prev === null || prev.collection !== "gallery"
+            ? prev
+            : { collection: "gallery", index: (prev.index - 1 + gallery.length) % gallery.length },
+        );
       }
     };
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [activeGalleryIndex]);
+  }, [activeModal]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -415,11 +444,16 @@ export default function Page() {
         </div>
 
         <div className="mt-10 grid gap-6 xl:grid-cols-4">
-          {fleetCards.map((item) => (
+          {fleetCards.map((item, index) => (
             <article key={item.title} className="overflow-hidden rounded-[1.9rem] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))]">
               <div className={`grid gap-1 ${item.images.length > 1 ? "grid-cols-3" : "grid-cols-1"}`}>
                 {item.images.map((image) => (
-                  <div key={image} className="relative h-72 overflow-hidden bg-zinc-900">
+                  <button
+                    key={image}
+                    type="button"
+                    onClick={() => setActiveModal({ collection: "fleet", index })}
+                    className="relative h-72 overflow-hidden bg-zinc-900 text-left"
+                  >
                     <Image
                       src={image}
                       alt={item.title}
@@ -427,7 +461,10 @@ export default function Page() {
                       sizes="(max-width: 1280px) 100vw, 25vw"
                       className="object-cover transition duration-500 hover:scale-[1.04]"
                     />
-                  </div>
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 to-transparent px-4 py-3 text-xs font-bold uppercase tracking-[0.2em] text-white">
+                      Clique para ampliar
+                    </div>
+                  </button>
                 ))}
               </div>
               <div className="p-6">
@@ -482,7 +519,7 @@ export default function Page() {
               <button
                 key={item.image}
                 type="button"
-                onClick={() => setActiveGalleryIndex(index)}
+                onClick={() => setActiveModal({ collection: "gallery", index })}
                 className={`group relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-zinc-900 text-left shadow-[0_20px_50px_rgba(0,0,0,0.25)] ${item.className}`}
               >
                 <div className="relative h-full min-h-[240px] w-full">
@@ -606,51 +643,67 @@ export default function Page() {
         </div>
       </footer>
 
-      {activeGalleryIndex !== null ? (
+      {activeModal !== null && activeModalItem !== null ? (
         <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/90 p-4 backdrop-blur-sm">
           <button
             type="button"
-            onClick={() => setActiveGalleryIndex(null)}
+            onClick={() => setActiveModal(null)}
             aria-label="Fechar galeria"
             className="absolute right-4 top-4 rounded-full border border-white/15 bg-white/10 p-3 text-white transition hover:bg-[#c97d1d]"
           >
             <X className="h-5 w-5" />
           </button>
 
-          <button
-            type="button"
-            onClick={() => setActiveGalleryIndex((activeGalleryIndex - 1 + gallery.length) % gallery.length)}
-            aria-label="Foto anterior"
-            className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-[#c97d1d]"
-          >
-            <ChevronUp className="h-5 w-5 -rotate-90" />
-          </button>
+          {activeModal.collection === "gallery" ? (
+            <button
+              type="button"
+              onClick={() =>
+                setActiveModal({ collection: "gallery", index: (activeModal.index - 1 + gallery.length) % gallery.length })
+              }
+              aria-label="Foto anterior"
+              className="absolute left-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-[#c97d1d]"
+            >
+              <ChevronUp className="h-5 w-5 -rotate-90" />
+            </button>
+          ) : null}
 
           <div className="w-full max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 bg-zinc-950 shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
             <div className="relative aspect-[16/10] w-full">
               <Image
-                src={gallery[activeGalleryIndex].image}
-                alt={gallery[activeGalleryIndex].title}
+                src={activeModalItem.image}
+                alt={activeModalItem.title}
                 fill
                 sizes="100vw"
                 className="object-contain"
               />
             </div>
             <div className="border-t border-white/10 p-6">
-              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#ffbb47]">Galeria Terraar</p>
-              <h3 className="mt-2 text-2xl font-bold text-white">{gallery[activeGalleryIndex].title}</h3>
-              <p className="mt-2 text-sm leading-7 text-zinc-300">{gallery[activeGalleryIndex].description}</p>
+              <p className="text-xs font-bold uppercase tracking-[0.25em] text-[#ffbb47]">
+                {activeModal.collection === "gallery" ? "Galeria Terraar" : "Plataformas Terraar"}
+              </p>
+              <h3 className="mt-2 text-2xl font-bold text-white">{activeModalItem.title}</h3>
+              <p className="mt-2 text-sm leading-7 text-zinc-300">{activeModalItem.description}</p>
+              <Link
+                href={whatsappQuoteUrl(activeModalItem.title)}
+                target="_blank"
+                className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-[#25d366] px-6 py-4 text-sm font-bold uppercase tracking-[0.16em] text-white transition hover:bg-[#1fb859]"
+              >
+                Chamar no WhatsApp
+                <ArrowRight className="h-4 w-4" />
+              </Link>
             </div>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setActiveGalleryIndex((activeGalleryIndex + 1) % gallery.length)}
-            aria-label="Próxima foto"
-            className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-[#c97d1d]"
-          >
-            <ChevronUp className="h-5 w-5 rotate-90" />
-          </button>
+          {activeModal.collection === "gallery" ? (
+            <button
+              type="button"
+              onClick={() => setActiveModal({ collection: "gallery", index: (activeModal.index + 1) % gallery.length })}
+              aria-label="Próxima foto"
+              className="absolute right-4 top-1/2 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-[#c97d1d]"
+            >
+              <ChevronUp className="h-5 w-5 rotate-90" />
+            </button>
+          ) : null}
         </div>
       ) : null}
 
