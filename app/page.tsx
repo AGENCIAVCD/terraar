@@ -87,7 +87,7 @@ const gallery = [
     image: "/images/frota-pesada/caminhao-tanque-patio-maquinas-terraar.jpeg",
     title: "Estrutura própria para atender sua obra com agilidade",
     description: "Frota e apoio preparados para entregar a máquina certa sem complicação.",
-    className: "xl:row-span-2",
+    className: "",
     icon: Building2,
   },
   {
@@ -108,7 +108,7 @@ const gallery = [
     image: "/images/frota-pesada/liugong-908e-vista-conjunto-caminhao-maquina.jpeg",
     title: "Mini Escavadeira entregue pronta para entrar em serviço",
     description: "Receba a máquina no local com mais rapidez e menos atraso na mobilização.",
-    className: "sm:col-span-2 xl:col-span-1",
+    className: "",
     icon: Truck,
   },
   {
@@ -136,7 +136,7 @@ const gallery = [
     image: "/images/frota-pesada/liugong-915e-canteiro-entardecer.jpeg",
     title: "Escavadeira Hidraulica LiuGong 915E",
     description: "Escavadeira hidraulica LiuGong 915E da frota TERRAAR estacionada em canteiro de obras.",
-    className: "xl:row-span-2",
+    className: "",
     icon: Drill,
   },
   {
@@ -511,7 +511,7 @@ export default function Page() {
           </p>
         </div>
 
-        <div className="mt-10 grid auto-rows-[240px] grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 grid auto-rows-[240px] grid-flow-dense grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
           {gallery.map((item, index) => {
             const Icon = item.icon;
 
