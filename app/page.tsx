@@ -37,16 +37,16 @@ const fleetCards = [
     images: ["/images/IMG-20260224-WA0026.jpg"],
   },
   {
-    title: "Modelo Elétrico Zero Emissão",
-    badge: "AC+",
-    description: "Solução limpa para galpões, indústrias e centros logísticos que exigem operação silenciosa.",
-    images: ["/images/IMG-20260219-WA0055.jpg"],
+    title: "Plataforma Articulada Compacta",
+    badge: "12M",
+    description: "Indicada para manutenção, instalação e acesso em pontos com obstáculos e áreas de difícil alcance.",
+    images: ["/images/hero-pta-referencia.jpeg"],
   },
   {
-    title: "Plataformas com Certificação IPAF",
-    badge: "IPAF",
-    description: "Equipamentos preparados para operações que exigem padrão, segurança e confiança na contratação.",
-    images: ["/images/IMG-20260223-WA0052.jpg"],
+    title: "Plataforma Articulada para Maior Alcance",
+    badge: "16M+",
+    description: "Mais alcance lateral e flexibilidade para operações em altura com produtividade e segurança.",
+    images: ["/images/boom-lift-hero.png"],
   },
 ];
 
