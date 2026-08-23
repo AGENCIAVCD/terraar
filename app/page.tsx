@@ -12,6 +12,7 @@ import {
   Drill,
   Instagram,
   MessageCircleMore,
+  Play,
   ShieldCheck,
   Truck,
   Wrench,
@@ -176,6 +177,7 @@ export default function Page() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formError, setFormError] = useState("");
+  const [videoStarted, setVideoStarted] = useState(false);
 
   const activeModalItem =
     activeModal === null
@@ -288,7 +290,7 @@ export default function Page() {
           <Link href="#top" aria-label="Terraar Brasil — voltar ao início" className="flex min-w-0 items-center gap-3">
             <div className="relative h-10 w-36 shrink-0 sm:h-12 sm:w-56">
               <Image
-                src="/images/terraar-logo.png"
+                src="/images/optimized/terraar-logo.webp"
                 alt="Terraar Brasil"
                 fill
                 sizes="(min-width: 640px) 224px, 144px"
@@ -329,9 +331,6 @@ export default function Page() {
           <div className="hero-grid h-full w-full" />
         </div>
         <div className="absolute left-[-8rem] top-[18%] h-52 w-52 rounded-full bg-[#f99c2c]/12 blur-3xl sm:h-72 sm:w-72" />
-        <div className="pointer-events-none absolute bottom-[-1rem] right-[-8rem] h-[18rem] w-[30rem] opacity-[0.18] sm:right-[-4rem] sm:opacity-[0.24] lg:hidden">
-              <Image src="/images/optimized/boom-lift-hero.webp" alt="" fill sizes="100vw" className="object-contain object-right" />
-        </div>
         <div className="absolute inset-x-0 bottom-0 h-36 bg-[linear-gradient(180deg,rgba(244,239,231,0),var(--hero-surface))]" />
 
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -424,15 +423,28 @@ export default function Page() {
         <div className="mt-10 flex justify-center">
           <div className="w-full max-w-5xl overflow-hidden rounded-[2rem] border border-[rgba(255,187,71,0.2)] bg-zinc-900 shadow-[0_20px_80px_rgba(0,0,0,0.35)]">
             <div className="relative aspect-video w-full bg-black">
-              <iframe
-                src={INSTITUTIONAL_VIDEO_EMBED}
-                title="Vídeo institucional Terraar Brasil"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-                className="absolute inset-0 h-full w-full"
-              />
+              {videoStarted ? (
+                <iframe
+                  src={INSTITUTIONAL_VIDEO_EMBED}
+                  title="Vídeo institucional Terraar Brasil"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="absolute inset-0 h-full w-full"
+                />
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setVideoStarted(true)}
+                  aria-label="Carregar e assistir ao vídeo institucional da Terraar Brasil"
+                  className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[radial-gradient(circle_at_center,rgba(249,156,44,0.22),transparent_48%),#09090b] text-white transition hover:bg-[radial-gradient(circle_at_center,rgba(249,156,44,0.34),transparent_52%),#09090b]"
+                >
+                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-[#f99c2c] shadow-[0_12px_30px_rgba(249,156,44,0.35)]">
+                    <Play className="ml-1 h-7 w-7 fill-current" />
+                  </span>
+                  <span className="text-sm font-bold uppercase tracking-[0.18em]">Assistir ao vídeo institucional</span>
+                </button>
+              )}
             </div>
           </div>
         </div>
