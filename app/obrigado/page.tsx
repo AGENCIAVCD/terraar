@@ -1,8 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Instagram } from "lucide-react";
+import type { Metadata } from "next";
 
 const INSTAGRAM_URL = "https://www.instagram.com/terraar.brasil/";
+
+export const metadata: Metadata = {
+  title: "Obrigado pelo contato",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
 
 export default function ObrigadoPage() {
   return (
