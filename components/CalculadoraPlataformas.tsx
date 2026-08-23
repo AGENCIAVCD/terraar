@@ -22,28 +22,28 @@ type Articulada = {
 };
 
 const tesouras: Tesoura[] = [
-  { descricao: "Plataforma tipo Tesoura 8,0m - Elétrico", altura: 7.8, prolongamento: 0.9, largura: 1.2, suporte: 250 },
-  { descricao: "Plataforma tipo Tesoura 10,0m - Elétrico", altura: 10.0, prolongamento: 0.9, largura: 2.44, suporte: 250 },
-  { descricao: "Plataforma tipo Tesoura 12,0m - Elétrico", altura: 12.0, prolongamento: 0.9, largura: 1.73, suporte: 350 },
-  { descricao: "Plataforma tipo Tesoura 14,0m - Elétrico", altura: 13.8, prolongamento: 0.9, largura: 2.44, suporte: 350 },
-  { descricao: "Plataforma tipo Tesoura 16,0m - Elétrico", altura: 15.7, prolongamento: 0.9, largura: 2.44, suporte: 350 },
+  { descricao: "Plataforma tipo Tesoura 8,0 m - Elétrico", altura: 7.8, prolongamento: 0.9, largura: 1.2, suporte: 250 },
+  { descricao: "Plataforma tipo Tesoura 10,0 m - Elétrico", altura: 10.0, prolongamento: 0.9, largura: 2.44, suporte: 250 },
+  { descricao: "Plataforma tipo Tesoura 12,0 m - Elétrico", altura: 12.0, prolongamento: 0.9, largura: 1.73, suporte: 350 },
+  { descricao: "Plataforma tipo Tesoura 14,0 m - Elétrico", altura: 13.8, prolongamento: 0.9, largura: 2.44, suporte: 350 },
+  { descricao: "Plataforma tipo Tesoura 16,0 m - Elétrico", altura: 15.7, prolongamento: 0.9, largura: 2.44, suporte: 350 },
 ];
 
 const articuladas: Articulada[] = [
-  { descricao: "Plataforma Articulada 12,0m - Compacta", altura: 11.8, alcance: 6.5, largura: 1.2, suporte: 227 },
-  { descricao: "Plataforma Articulada 16,0m - Compacta", altura: 16.5, alcance: 7.15, largura: 1.73, suporte: 230 },
-  { descricao: "Plataforma Articulada 16,0m", altura: 16.27, alcance: 8.69, largura: 2.44, suporte: 320 },
-  { descricao: "Plataforma Articulada 20,0m", altura: 20.15, alcance: 11.13, largura: 2.44, suporte: 320 },
-  { descricao: "Plataforma Articulada 24,0m", altura: 24.3, alcance: 17.1, largura: 2.44, suporte: 300 },
-  { descricao: "Plataforma Articulada 28,0m", altura: 28.1, alcance: 19.4, largura: 2.44, suporte: 250 },
-  { descricao: "Plataforma Articulada 44,0m", altura: 44.06, alcance: 22.97, largura: 2.44, suporte: 272 },
-  { descricao: "Plataforma Telescópica 20,0m", altura: 20.23, alcance: 13.36, largura: 2.44, suporte: 320 },
-  { descricao: "Plataforma Telescópica 24,0m", altura: 24.8, alcance: 17.9, largura: 2.44, suporte: 454 },
-  { descricao: "Plataforma Telescópica 26,0m", altura: 26.3, alcance: 19.5, largura: 2.44, suporte: 454 },
-  { descricao: "Plataforma Telescópica 28,0m", altura: 28.6, alcance: 21.9, largura: 2.44, suporte: 454 },
-  { descricao: "Plataforma Telescópica 30,0m", altura: 30.2, alcance: 23.0, largura: 2.44, suporte: 454 },
-  { descricao: "Plataforma Telescópica 34,0m", altura: 34.14, alcance: 21.6, largura: 2.44, suporte: 454 },
-  { descricao: "Plataforma Telescópica 36,0m", altura: 36.23, alcance: 23.6, largura: "4,17 / 2,44", suporte: 454 },
+  { descricao: "Plataforma Articulada 12,0 m - Compacta", altura: 11.8, alcance: 6.5, largura: 1.2, suporte: 227 },
+  { descricao: "Plataforma Articulada 16,0 m - Compacta", altura: 16.5, alcance: 7.15, largura: 1.73, suporte: 230 },
+  { descricao: "Plataforma Articulada 16,0 m", altura: 16.27, alcance: 8.69, largura: 2.44, suporte: 320 },
+  { descricao: "Plataforma Articulada 20,0 m", altura: 20.15, alcance: 11.13, largura: 2.44, suporte: 320 },
+  { descricao: "Plataforma Articulada 24,0 m", altura: 24.3, alcance: 17.1, largura: 2.44, suporte: 300 },
+  { descricao: "Plataforma Articulada 28,0 m", altura: 28.1, alcance: 19.4, largura: 2.44, suporte: 250 },
+  { descricao: "Plataforma Articulada 44,0 m", altura: 44.06, alcance: 22.97, largura: 2.44, suporte: 272 },
+  { descricao: "Plataforma Telescópica 20,0 m", altura: 20.23, alcance: 13.36, largura: 2.44, suporte: 320 },
+  { descricao: "Plataforma Telescópica 24,0 m", altura: 24.8, alcance: 17.9, largura: 2.44, suporte: 454 },
+  { descricao: "Plataforma Telescópica 26,0 m", altura: 26.3, alcance: 19.5, largura: 2.44, suporte: 454 },
+  { descricao: "Plataforma Telescópica 28,0 m", altura: 28.6, alcance: 21.9, largura: 2.44, suporte: 454 },
+  { descricao: "Plataforma Telescópica 30,0 m", altura: 30.2, alcance: 23.0, largura: 2.44, suporte: 454 },
+  { descricao: "Plataforma Telescópica 34,0 m", altura: 34.14, alcance: 21.6, largura: 2.44, suporte: 454 },
+  { descricao: "Plataforma Telescópica 36,0 m", altura: 36.23, alcance: 23.6, largura: "4,17 / 2,44", suporte: 454 },
 ];
 
 const cargaOpcoes = [
@@ -102,7 +102,7 @@ export default function CalculadoraPlataformas() {
       <div className="rounded-[2rem] border border-black/5 bg-white p-6 text-zinc-900 shadow-[0_24px_60px_rgba(0,0,0,0.08)] sm:p-10">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-center text-4xl font-bold">Escolha o equipamento certo para sua operação</h2>
-          <p className="mt-3 text-center text-gray-600">Filtre altura, alcance e carga para acelerar a cotação com o modelo mais adequado.</p>
+          <p className="mt-3 text-center text-gray-600">Filtre por altura, alcance e carga para acelerar a cotação do modelo mais adequado.</p>
         </div>
 
         <div className="mx-auto mt-10 flex max-w-2xl rounded-2xl bg-white p-2 shadow-lg ring-1 ring-black/5">
@@ -151,8 +151,8 @@ export default function CalculadoraPlataformas() {
                 className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[rgba(249,156,44,0.18)] accent-[#f99c2c]"
               />
               <div className="mt-2 flex justify-between text-xs text-gray-500">
-                <span>6m</span>
-                <span>{formatarNumero(alturaMaxima)}m</span>
+                <span>6 m</span>
+                <span>{formatarNumero(alturaMaxima)} m</span>
               </div>
             </div>
 
@@ -174,8 +174,8 @@ export default function CalculadoraPlataformas() {
                   className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[rgba(249,156,44,0.18)] accent-[#f99c2c]"
                 />
                 <div className="mt-2 flex justify-between text-xs text-gray-500">
-                  <span>0m</span>
-                  <span>{formatarNumero(MAX_ALCANCE_ARTICULADA)}m</span>
+                <span>0 m</span>
+                <span>{formatarNumero(MAX_ALCANCE_ARTICULADA)} m</span>
                 </div>
               </div>
             ) : null}
@@ -267,7 +267,7 @@ export default function CalculadoraPlataformas() {
                 <p className="mt-2 text-gray-600">
                   {mostrarAvisoCargaTesoura
                     ? "Para suportar essa carga, seria interessante contratar a plataforma articulada ou telescópica."
-                    : "Ajuste altura, alcance ou carga para ver mais opções."}
+                    : "Ajuste a altura, o alcance ou a carga para ver mais opções."}
                 </p>
               </div>
             )}

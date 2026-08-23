@@ -134,29 +134,29 @@ const gallery = [
   },
   {
     image: "/images/frota-pesada/liugong-915e-canteiro-entardecer.jpeg",
-    title: "Escavadeira Hidraulica LiuGong 915E",
-    description: "Escavadeira hidraulica LiuGong 915E da frota TERRAAR estacionada em canteiro de obras.",
+    title: "Escavadeira Hidráulica LiuGong 915E",
+    description: "Escavadeira hidráulica LiuGong 915E da frota TERRAAR estacionada em canteiro de obras.",
     className: "",
     icon: Drill,
   },
   {
     image: "/images/frota-pesada/liugong-6112e-rolo-compactador-vista-traseira.jpeg",
     title: "Rolo Compactador LiuGong 6112E",
-    description: "Rolo compactador LiuGong 6112E da TERRAAR pronto para compactacao em servicos de terraplenagem.",
+    description: "Rolo compactador LiuGong 6112E da TERRAAR pronto para compactação em serviços de terraplenagem.",
     className: "",
     icon: Drill,
   },
   {
     image: "/images/frota-pesada/frota-escavadeira-rolo-pa-carregadeira-operacao.jpeg",
-    title: "Escavadeira, Rolo Compactador e Pa Carregadeira",
-    description: "Frota de maquinario pesado da TERRAAR em operacao no canteiro de obras, incluindo escavadeira LiuGong 915E.",
+    title: "Escavadeira, Rolo Compactador e Pá Carregadeira",
+    description: "Frota de maquinário pesado da TERRAAR em operação no canteiro de obras, incluindo escavadeira LiuGong 915E.",
     className: "sm:col-span-2 xl:col-span-2",
     icon: Building2,
   },
   {
     image: "/images/frota-pesada/retroescavadeira-rolo-compactador-terraplenagem-2.jpeg",
     title: "Retroescavadeira e Rolo Compactador",
-    description: "Retroescavadeira LiuGong e rolo compactador pe de carneiro da TERRAAR preparados para servico de terraplenagem.",
+    description: "Retroescavadeira LiuGong e rolo compactador pé de carneiro da TERRAAR preparados para serviço de terraplenagem.",
     className: "",
     icon: Building2,
   },
@@ -210,7 +210,7 @@ export default function Page() {
 
       if (!response.ok) {
         const data = (await response.json().catch(() => null)) as { error?: string } | null;
-        throw new Error(data?.error || "Nao foi possivel enviar sua solicitacao.");
+        throw new Error(data?.error || "Não foi possível enviar sua solicitação.");
       }
 
       setFormData({
@@ -220,7 +220,7 @@ export default function Page() {
       });
       router.push("/obrigado");
     } catch (error) {
-      const message = error instanceof Error ? error.message : "Nao foi possivel enviar sua solicitacao.";
+      const message = error instanceof Error ? error.message : "Não foi possível enviar sua solicitação.";
       setFormError(message);
     } finally {
       setIsSubmitting(false);
@@ -423,7 +423,7 @@ export default function Page() {
             <div className="relative aspect-video w-full bg-black">
               <iframe
                 src={INSTITUTIONAL_VIDEO_EMBED}
-                title="Video institucional Terraar Brasil"
+                title="Vídeo institucional Terraar Brasil"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
