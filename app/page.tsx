@@ -286,14 +286,17 @@ export default function Page() {
       <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[rgba(244,239,231,0.82)] text-zinc-950 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
           <Link href="#top" className="flex min-w-0 items-center gap-3">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full border border-[rgba(249,156,44,0.32)] bg-white shadow-[0_12px_32px_rgba(249,156,44,0.18)]">
-              <Image src="/images/terraar-logo.jpg" alt="Logo Terraar Brasil" fill sizes="48px" className="object-cover" priority />
+            <div className="relative h-10 w-36 shrink-0 sm:h-12 sm:w-56">
+              <Image
+                src="/images/terraar-logo.png"
+                alt="Terraar Brasil"
+                fill
+                sizes="(min-width: 640px) 224px, 144px"
+                className="object-contain object-left"
+                priority
+              />
             </div>
             <div className="min-w-0">
-              <p className="truncate font-[family:var(--font-headline)] text-lg font-bold uppercase tracking-[0.16em] text-[#d47a12] sm:text-2xl sm:tracking-[0.24em]">
-                <span className="sm:hidden">Terraar</span>
-                <span className="hidden sm:inline">Terraar Brasil</span>
-              </p>
               <p className="hidden text-xs text-zinc-600 sm:block">Locação de plataformas elevatórias para obra, indústria e manutenção</p>
             </div>
           </Link>

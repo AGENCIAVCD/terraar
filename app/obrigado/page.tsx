@@ -20,9 +20,9 @@ export default function ObrigadoPage() {
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,9,11,0.86),rgba(9,9,11,1))]" />
 
       <div className="relative w-full max-w-3xl rounded-[2rem] border border-[rgba(249,156,44,0.2)] bg-zinc-900/85 p-8 text-center shadow-[0_30px_100px_rgba(0,0,0,0.45)] backdrop-blur-xl sm:p-12">
-        <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-[1.5rem] bg-white shadow-[0_0_50px_rgba(249,156,44,0.35)]">
-          <div className="relative h-14 w-14">
-            <Image src="/images/terraar-logo.jpg" alt="Logo Terraar Brasil" fill sizes="56px" className="object-cover rounded-full" priority />
+        <div className="mx-auto flex h-20 w-20 items-center justify-center overflow-hidden rounded-[1.5rem] bg-zinc-950 shadow-[0_0_50px_rgba(249,156,44,0.35)]">
+          <div className="relative h-16 w-16">
+            <Image src="/images/terraar-mark.png" alt="Logo Terraar Brasil" fill sizes="64px" className="object-contain" priority />
           </div>
         </div>
 

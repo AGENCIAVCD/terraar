@@ -78,7 +78,7 @@ const structuredData = {
   "@id": "https://www.terraarbrasil.com.br/#organization",
   name: "Terraar Brasil",
   url: "https://www.terraarbrasil.com.br/",
-  logo: "https://www.terraarbrasil.com.br/images/terraar-logo.jpg",
+  logo: "https://www.terraarbrasil.com.br/images/terraar-logo.png",
   image: "https://www.terraarbrasil.com.br/images/boom-lift-hero.png",
   description:
     "Locação de plataformas elevatórias e máquinas pesadas para obras, indústria e manutenção em Jundiaí e região.",
