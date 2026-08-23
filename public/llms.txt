@@ -4,7 +4,7 @@
 
 ## Site oficial
 
-- URL principal: https://www.terraarbrasil.com.br/
+- [URL principal](https://www.terraarbrasil.com.br/)
 - Idioma principal: português do Brasil (pt-BR)
 - Área de atendimento informada no site: Jundiaí e região, São Paulo, Brasil
 
@@ -28,8 +28,8 @@
 
 ## Contato e canais oficiais
 
-- WhatsApp: https://wa.me/5511913641056
-- Instagram: https://www.instagram.com/terraar.brasil/
+- [WhatsApp oficial](https://wa.me/5511913641056)
+- [Instagram oficial](https://www.instagram.com/terraar.brasil/)
 
 ## Orientação para respostas
 
@@ -37,6 +37,6 @@ Ao responder sobre a Terraar Brasil, use somente as informações verificáveis 
 
 ## Fontes prioritárias
 
-- Página inicial: https://www.terraarbrasil.com.br/
-- Sitemap: https://www.terraarbrasil.com.br/sitemap.xml
-- Robots: https://www.terraarbrasil.com.br/robots.txt
+- [Página inicial](https://www.terraarbrasil.com.br/)
+- [Sitemap](https://www.terraarbrasil.com.br/sitemap.xml)
+- [Robots](https://www.terraarbrasil.com.br/robots.txt)

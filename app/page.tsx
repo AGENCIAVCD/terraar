@@ -21,32 +21,32 @@ import { useEffect, useState } from "react";
 
 const WHATSAPP_URL = "https://wa.me/5511913641056";
 const INSTAGRAM_URL = "https://www.instagram.com/terraar.brasil/";
-const INSTITUTIONAL_VIDEO_EMBED = "https://www.youtube.com/embed/a3NtvovVe5w?rel=0&modestbranding=1";
+const INSTITUTIONAL_VIDEO_EMBED = "https://www.youtube-nocookie.com/embed/a3NtvovVe5w?rel=0&modestbranding=1";
 
 const fleetCards = [
   {
     title: "Plataforma Tesoura Compacta",
     badge: "S0807AC",
     description: "Ideal para manutenção, instalações e operação em áreas internas com agilidade e segurança.",
-    images: ["/images/IMG-20260223-WA0033.jpg"],
+    images: ["/images/optimized/IMG-20260223-WA0033.webp"],
   },
   {
     title: "Plataforma Tesoura Alta Capacidade",
     badge: "S1412AC+",
     description: "Mais altura e capacidade de carga para equipes que precisam de produtividade com estabilidade.",
-    images: ["/images/IMG-20260224-WA0026.jpg"],
+    images: ["/images/optimized/IMG-20260224-WA0026.webp"],
   },
   {
     title: "Plataforma Articulada Compacta",
     badge: "12M",
     description: "Equipamento articulado entregue no canteiro, pronto para entrar em operação com mobilização rápida e segura.",
-    images: ["/images/plataforma-articulada-entrega.png"],
+    images: ["/images/optimized/plataforma-articulada-entrega.webp"],
   },
   {
     title: "Plataforma Articulada para Maior Alcance",
     badge: "16M+",
     description: "Ideal para acessar pontos com obstáculos e trabalhar em altura na obra com mais alcance lateral e precisão.",
-    images: ["/images/plataforma-articulada-obra.png"],
+    images: ["/images/optimized/plataforma-articulada-obra.webp"],
   },
 ];
 
@@ -77,90 +77,93 @@ const reasons = [
 
 const gallery = [
   {
-    image: "/images/frota-pesada/caminhao-comboio-vw-constellation-24280.jpeg",
+    image: "/images/optimized/frota-pesada/caminhao-comboio-vw-constellation-24280.webp",
     title: "Caminhão comboio para manter sua obra rodando",
     description: "Suporte em campo para reduzir paradas e manter o ritmo da sua operação.",
     className: "sm:col-span-2 xl:col-span-2 xl:row-span-2",
     icon: Wrench,
   },
   {
-    image: "/images/frota-pesada/caminhao-tanque-patio-maquinas-terraar.jpeg",
+    image: "/images/optimized/frota-pesada/caminhao-tanque-patio-maquinas-terraar.webp",
     title: "Estrutura própria para atender sua obra com agilidade",
     description: "Frota e apoio preparados para entregar a máquina certa sem complicação.",
     className: "",
     icon: Building2,
   },
   {
-    image: "/images/frota-pesada/liugong-764-retroescavadeira-frontal.jpeg",
+    image: "/images/optimized/frota-pesada/liugong-764-retroescavadeira-frontal.webp",
     title: "LiuGong 764 - Retroescavadeira",
     description: "Ideal para serviços de escavação, carga e apoio com rapidez no canteiro.",
     className: "",
     icon: Drill,
   },
   {
-    image: "/images/frota-pesada/liugong-838t-pa-carregadeira-vista-lateral-frontal.jpeg",
+    image: "/images/optimized/frota-pesada/liugong-838t-pa-carregadeira-vista-lateral-frontal.webp",
     title: "Pá Carregadeira LiuGong 838T",
     description: "Máquina pronta para carregar, movimentar material e ganhar produtividade na obra.",
     className: "",
     icon: Drill,
   },
   {
-    image: "/images/frota-pesada/liugong-908e-vista-conjunto-caminhao-maquina.jpeg",
+    image: "/images/optimized/frota-pesada/liugong-908e-vista-conjunto-caminhao-maquina.webp",
     title: "Mini Escavadeira entregue pronta para entrar em serviço",
     description: "Receba a máquina no local com mais rapidez e menos atraso na mobilização.",
     className: "",
     icon: Truck,
   },
   {
-    image: "/images/frota-pesada/liugong-915e-vista-frontal-angulada.jpeg",
+    image: "/images/optimized/frota-pesada/liugong-915e-vista-frontal-angulada.webp",
     title: "LiuGong 915E - Escavadeira",
     description: "Potência para frentes mais exigentes com confiança e desempenho no dia a dia.",
     className: "",
     icon: Drill,
   },
   {
-    image: "/images/frota-pesada/liugong-9035e-terraar-frontal-com-concha.jpeg",
+    image: "/images/optimized/frota-pesada/liugong-9035e-terraar-frontal-com-concha.webp",
     title: "LiuGong 9035E - Mini Escavadeira",
     description: "Compacta, prática e pronta para obras urbanas e serviços com pouco espaço.",
     className: "",
     icon: Drill,
   },
   {
-    image: "/images/frota-pesada/patio-maquinas-liugong-838t-bobcat-outras.jpeg",
+    image: "/images/optimized/frota-pesada/patio-maquinas-liugong-838t-bobcat-outras.webp",
     title: "Variedade de máquinas para atender diferentes etapas da obra",
     description: "Mais opções para encontrar a solução certa com rapidez e segurança.",
     className: "sm:col-span-2 xl:col-span-2",
     icon: Building2,
   },
   {
-    image: "/images/frota-pesada/liugong-915e-canteiro-entardecer.jpeg",
+    image: "/images/optimized/frota-pesada/liugong-915e-canteiro-entardecer.webp",
     title: "Escavadeira Hidráulica LiuGong 915E",
     description: "Escavadeira hidráulica LiuGong 915E da frota TERRAAR estacionada em canteiro de obras.",
     className: "",
     icon: Drill,
   },
   {
-    image: "/images/frota-pesada/liugong-6112e-rolo-compactador-vista-traseira.jpeg",
+    image: "/images/optimized/frota-pesada/liugong-6112e-rolo-compactador-vista-traseira.webp",
     title: "Rolo Compactador LiuGong 6112E",
     description: "Rolo compactador LiuGong 6112E da TERRAAR pronto para compactação em serviços de terraplenagem.",
     className: "",
     icon: Drill,
   },
   {
-    image: "/images/frota-pesada/frota-escavadeira-rolo-pa-carregadeira-operacao.jpeg",
+    image: "/images/optimized/frota-pesada/frota-escavadeira-rolo-pa-carregadeira-operacao.webp",
     title: "Escavadeira, Rolo Compactador e Pá Carregadeira",
     description: "Frota de maquinário pesado da TERRAAR em operação no canteiro de obras, incluindo escavadeira LiuGong 915E.",
     className: "sm:col-span-2 xl:col-span-2",
     icon: Building2,
   },
   {
-    image: "/images/frota-pesada/retroescavadeira-rolo-compactador-terraplenagem-2.jpeg",
+    image: "/images/optimized/frota-pesada/retroescavadeira-rolo-compactador-terraplenagem-2.webp",
     title: "Retroescavadeira e Rolo Compactador",
     description: "Retroescavadeira LiuGong e rolo compactador pé de carneiro da TERRAAR preparados para serviço de terraplenagem.",
     className: "",
     icon: Building2,
   },
 ];
+
+const whatsappQuoteUrl = (itemTitle: string) =>
+  `${WHATSAPP_URL}?text=${encodeURIComponent(`Olá! Quero receber orçamento da ${itemTitle}.`)}`;
 
 export default function Page() {
   const router = useRouter();
@@ -184,9 +187,6 @@ export default function Page() {
             description: fleetCards[activeModal.index].description,
           }
         : gallery[activeModal.index];
-
-  const whatsappQuoteUrl = (itemTitle: string) =>
-    `${WHATSAPP_URL}?text=${encodeURIComponent(`Olá! Quero receber orçamento da ${itemTitle}.`)}`;
 
   const handleContactSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -285,7 +285,7 @@ export default function Page() {
 
       <header className="fixed inset-x-0 top-0 z-50 border-b border-black/10 bg-[rgba(244,239,231,0.82)] text-zinc-950 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-          <Link href="#top" className="flex min-w-0 items-center gap-3">
+          <Link href="#top" aria-label="Terraar Brasil — voltar ao início" className="flex min-w-0 items-center gap-3">
             <div className="relative h-10 w-36 shrink-0 sm:h-12 sm:w-56">
               <Image
                 src="/images/terraar-logo.png"
@@ -330,7 +330,7 @@ export default function Page() {
         </div>
         <div className="absolute left-[-8rem] top-[18%] h-52 w-52 rounded-full bg-[#f99c2c]/12 blur-3xl sm:h-72 sm:w-72" />
         <div className="pointer-events-none absolute bottom-[-1rem] right-[-8rem] h-[18rem] w-[30rem] opacity-[0.18] sm:right-[-4rem] sm:opacity-[0.24] lg:hidden">
-          <Image src="/images/boom-lift-hero.png" alt="" fill sizes="100vw" className="object-contain object-right" />
+              <Image src="/images/optimized/boom-lift-hero.webp" alt="" fill sizes="100vw" className="object-contain object-right" />
         </div>
         <div className="absolute inset-x-0 bottom-0 h-36 bg-[linear-gradient(180deg,rgba(244,239,231,0),var(--hero-surface))]" />
 
@@ -396,7 +396,7 @@ export default function Page() {
                 <div className="hero-machine-shell relative w-full max-w-[54rem] lg:translate-x-6 lg:translate-y-6 xl:translate-x-0">
                   <div className="hero-machine-float">
                     <Image
-                      src="/images/boom-lift-hero.png"
+                      src="/images/optimized/boom-lift-hero.webp"
                       alt="Plataforma elevatória articulada Terraar Brasil"
                       width={1152}
                       height={804}
@@ -427,6 +427,7 @@ export default function Page() {
               <iframe
                 src={INSTITUTIONAL_VIDEO_EMBED}
                 title="Vídeo institucional Terraar Brasil"
+                loading="lazy"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
                 allowFullScreen
@@ -587,25 +588,39 @@ export default function Page() {
               </div>
 
               <div className="grid gap-4">
+                <label htmlFor="contact-name" className="sr-only">
+                  Seu nome
+                </label>
                 <input
+                  id="contact-name"
                   type="text"
                   name="name"
                   placeholder="Seu nome"
+                  autoComplete="name"
                   value={formData.name}
                   onChange={(event) => setFormData((current) => ({ ...current, name: event.target.value }))}
                   className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#ffbb47]"
                   disabled={isSubmitting}
                 />
+                <label htmlFor="contact-phone" className="sr-only">
+                  WhatsApp
+                </label>
                 <input
+                  id="contact-phone"
                   type="tel"
                   name="phone"
                   placeholder="WhatsApp"
+                  autoComplete="tel"
                   value={formData.phone}
                   onChange={(event) => setFormData((current) => ({ ...current, phone: event.target.value }))}
                   className="h-12 rounded-2xl border border-white/10 bg-white/5 px-4 text-sm text-white outline-none transition placeholder:text-zinc-500 focus:border-[#ffbb47]"
                   disabled={isSubmitting}
                 />
+                <label htmlFor="contact-message" className="sr-only">
+                  Mensagem
+                </label>
                 <textarea
+                  id="contact-message"
                   name="message"
                   placeholder="Qual máquina você precisa e para quando?"
                   rows={4}
@@ -632,7 +647,7 @@ export default function Page() {
       </section>
 
       <footer className="border-t border-white/10 bg-black">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 text-center text-sm text-zinc-500 sm:px-6 md:flex-row md:text-left lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-8 text-center text-sm text-zinc-400 sm:px-6 md:flex-row md:text-left lg:px-8">
           <p>Terraar Brasil • Locação de máquinas pesadas para terraplanagem, mobilização e apoio operacional em Jundiaí-SP</p>
           <div className="flex flex-col items-center gap-3 md:flex-row">
             <Link href={INSTAGRAM_URL} target="_blank" className="inline-flex items-center gap-2 text-[#ffbb47] transition hover:text-[#ffd27a]">

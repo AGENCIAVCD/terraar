@@ -136,12 +136,13 @@ export default function CalculadoraPlataformas() {
           <div className="grid gap-8">
             <div>
               <div className="mb-3 flex items-center justify-between">
-                <label className="text-sm font-semibold text-gray-800">
+                <label htmlFor="altura-trabalho" className="text-sm font-semibold text-gray-800">
                   Altura de trabalho: <span className="text-[#f99c2c]">{formatarNumero(altura)} m</span>
                 </label>
                 <Calculator className="h-5 w-5 text-[#f99c2c]" />
               </div>
               <input
+                id="altura-trabalho"
                 type="range"
                 min={6}
                 max={alturaMaxima}
@@ -159,12 +160,13 @@ export default function CalculadoraPlataformas() {
             {abaAtiva === "articulada" ? (
               <div>
                 <div className="mb-3 flex items-center justify-between">
-                  <label className="text-sm font-semibold text-gray-800">
+                  <label htmlFor="alcance-lateral" className="text-sm font-semibold text-gray-800">
                     Alcance lateral: <span className="text-[#f99c2c]">{formatarNumero(alcance)} m</span>
                   </label>
                   <Truck className="h-5 w-5 text-[#f99c2c]" />
                 </div>
                 <input
+                  id="alcance-lateral"
                   type="range"
                   min={0}
                   max={MAX_ALCANCE_ARTICULADA}
@@ -181,8 +183,9 @@ export default function CalculadoraPlataformas() {
             ) : null}
 
             <div>
-              <label className="mb-3 block text-sm font-semibold text-gray-800">Carga necessária</label>
+              <label htmlFor="carga-necessaria" className="mb-3 block text-sm font-semibold text-gray-800">Carga necessária</label>
               <select
+                id="carga-necessaria"
                 value={cargaMinima}
                 onChange={(e) => setCargaMinima(Number(e.target.value))}
                 className="h-14 w-full rounded-2xl border border-gray-200 bg-gray-50 px-4 text-gray-900 outline-none transition focus:border-[#f99c2c] focus:bg-white"

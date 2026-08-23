@@ -45,7 +45,7 @@ export const metadata: Metadata = {
       "Locação de plataformas elevatórias e máquinas pesadas para obras, indústria e manutenção em Jundiaí e região.",
     images: [
       {
-        url: "/images/boom-lift-hero.png",
+        url: "/images/optimized/boom-lift-hero.webp",
         width: 1600,
         height: 900,
         alt: "Plataforma elevatória Terraar Brasil em operação",
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     title: "Terraar Brasil | Plataformas elevatórias e máquinas pesadas",
     description:
       "Locação de plataformas elevatórias e máquinas pesadas para obras, indústria e manutenção em Jundiaí e região.",
-    images: ["/images/boom-lift-hero.png"],
+    images: ["/images/optimized/boom-lift-hero.webp"],
   },
   robots: {
     index: true,
@@ -78,8 +78,8 @@ const structuredData = {
   "@id": "https://www.terraarbrasil.com.br/#organization",
   name: "Terraar Brasil",
   url: "https://www.terraarbrasil.com.br/",
-  logo: "https://www.terraarbrasil.com.br/images/terraar-logo.png",
-  image: "https://www.terraarbrasil.com.br/images/boom-lift-hero.png",
+  logo: "https://www.terraarbrasil.com.br/images/optimized/terraar-logo.webp",
+  image: "https://www.terraarbrasil.com.br/images/optimized/boom-lift-hero.webp",
   description:
     "Locação de plataformas elevatórias e máquinas pesadas para obras, indústria e manutenção em Jundiaí e região.",
   telephone: "+55 11 91364-1056",
