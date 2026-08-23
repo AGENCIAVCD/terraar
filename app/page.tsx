@@ -746,6 +746,7 @@ export default function Page() {
       <Link
         href={WHATSAPP_URL}
         target="_blank"
+        aria-label="Falar com a Terraar Brasil pelo WhatsApp"
         className="group fixed bottom-5 left-5 z-[70] flex items-center gap-3 rounded-full border border-white/10 bg-[#1f1f22]/95 px-4 py-3 text-white shadow-[0_18px_40px_rgba(0,0,0,0.35)] backdrop-blur transition hover:scale-[1.02] hover:bg-[#252529]"
       >
         <span className="flex h-12 w-12 items-center justify-center rounded-full bg-[#25d366] text-white shadow-[0_0_0_8px_rgba(37,211,102,0.14)]">
